@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everett DUI Attorney - Seattle Law Hawks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #1a3c6e;
+            color: white;
+            padding: 15px 0;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #8CBF4B;
+        }
+        .consult-btn {
+            background-color: #8CBF4B;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: none;
+            display: inline-block;
+        }
+        .consult-btn:hover {
+            background-color: #6fdc6f;
+            color: #1a3c6e !important;
+        }
+        .dui-hero {
+            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.8)), url('/city-seattle-with-text.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .dui-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .dui-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .dui-main {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        .dui-main h2 {
+            color: #1a3c6e;
+            margin-bottom: 20px;
+        }
+        .dui-main ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .dui-main ul li {
+            margin-bottom: 8px;
+        }
+        .dui-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            padding: 40px 30px;
+            margin-bottom: 40px;
+        }
+        .faq {
+            margin-top: 40px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            background-color: #1a3c6e;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-active .faq-answer {
+            display: block;
+        }
+        @media (max-width: 900px) {
+            .dui-section {
+                padding: 20px;
+            }
+        }
+        /* Associations slider styles (reuse from index) */
+        .associations {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .association-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 30px;
+            height: 170px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+        }
+        .slider-track {
+            display: flex;
+            width: calc(170px * 14); /* 7 images * 2 for seamless loop */
+            animation: slide-assoc 18s linear infinite;
+        }
+        .slider-img {
+            width: 150px;
+            height: 150px;
+            margin: 0 10px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+        @keyframes slide-assoc {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1190px); } /* 7 images * 170px */
+        }
+        @media (max-width: 900px) {
+            .association-slider {
+                height: 110px;
+            }
+            .slider-img {
+                width: 90px;
+                height: 90px;
+            }
+            .slider-track {
+                width: calc(110px * 14);
+            }
+            @keyframes slide-assoc {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-770px); }
+            }
+        }
+        /* Footer styles (reuse from index) */
+        footer {
+            background-color: #0f2447;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #8CBF4B;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
+            color: #8CBF4B;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="/" class="logo">
+                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo">
+                    Seattle Law Hawks
+                </a>
+                <nav style="flex: 1; display: flex; justify-content: center;">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/dui.html">DUIs 101</a></li>
+                    </ul>
+                </nav>
+                <a href="/contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- DUI Hero Section -->
+    <section class="dui-hero">
+        <div class="container">
+            <h1>Everett DUI Attorney</h1>
+            <p>DUI law firm providing proven DUI defense in all courts in the greater Seattle-Everett area.</p>
+        </div>
+    </section>
+
+    <!-- DUI Main Section -->
+    <section class="dui-main">
+        <div class="container">
+            <div class="dui-section">
+                <h2>Comprehensive DUI Defense</h2>
+                <p>
+                    Our firm handles all aspects of your DUI from the Washington State Department of Licensing DUI hearing (where anyone charged with DUI faces a license suspension of 90 days or more) to jury trial, and everything in between. Whether you have been arrested, charged or are simply the subject of an investigation, we can represent you for your DUI charges!
+                </p>
+                <h2>Scott Lawrence Attorney – Seattle Law Hawks- Everett, Washington</h2>
+                <p>
+                    Well educated in DUI defense tactics. Mr. Lawrence obtained a law degree with a criminal practice certificate at the University of Oregon, School of Law. Trained specifically in DUI defense through Oregon Law’s hands-on DUI defense clinic, he began practicing DUI defense during law school and graduated with a firm grasp on DUI case strategy. Mr. Lawrence has been a DUI lawyer representing cases with passion ever since.
+                </p>
+            </div>
+            <div class="dui-section">
+                <h2>Marijuana & DUI in Washington</h2>
+                <div class="faq">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can you get a DUI for driving high?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                It goes without saying that driving while high on marijuana is a bad idea. It is also illegal in all 50 states. Arresting a person for driving while drunk (on alcohol) is relatively straight forward. Washington State has set a blood alcohol level of .08 as the breakpoint for determining intoxication. (However, a person can be convicted of drunk driving at lower levels.)
+                            </p>
+                            <p>
+                                Marijuana is very different because the active ingredient, called THC, is stored in the fat cells of the body and may remain present for months after ingesting the drug. Blood levels of THC are not the best predictor of being “under the influence”.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is driving high in Washington illegal?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Washington State has a blood limit of 5 nanograms of active THC per milliliter of blood. While blood levels of THC are not the best predictor of impairment it is very difficult to find a cut and dry test and Washington State has opted to use unreliable measurement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long after getting high can you drive?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Rule of thumb suggests that it can take 3 hours for blood levels to drop below this level and for some people even longer. Ingesting marijuana instead of smoking it increases the time even further. The longer you wait between ingesting marijuana and driving (or operating equipment) the better, for your safety, safety of others, and avoiding a DUI conviction.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do I need an Everett DUI attorney that specializes in marijuana charges?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                No. The process of managing an alcohol charge is very similar to that of a marijuana charge. The charge is the same under either case: DUI/DWI.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I be convicted if my blood alcohol level is lower than the legal limit?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Being below the legal limit is not a guarantee of not being convicted if it can be proven that your body was impaired sufficiently. It is important to know the signs of impairment from marijuana. The signs of being under the influence of marijuana are numerous. Some of those signs impair the ability of people to drive responsibly. These signs include poor muscle and limb coordination, delayed reaction time and abilities, and distorted senses and even psychosis. While the amount of impairment from marijuana is typically much smaller than alcohol, the impact of a conviction is much the same.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dui-section">
+                <h2>When you need an Everett DUI Lawyer, you need Scott Lawrence</h2>
+                <p>
+                    No matter where your infraction originated, we are there to represent you in court, including the following courts:
+                </p>
+                <ul>
+                    <li>Marysville</li>
+                    <li>Lake Stevens</li>
+                    <li>Mukilteo</li>
+                    <li>Bothell</li>
+                    <li>Everett</li>
+                    <li>Shoreline</li>
+                    <li>Kenmore</li>
+                    <li>Renton</li>
+                    <li>Redmond</li>
+                    <li>Bellevue</li>
+                    <li>Seattle</li>
+                    <li>and more</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Associations Section (same as index) -->
+    <section class="associations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Associations</h2>
+                <p>Recognized by leading legal organizations</p>
+            </div>
+            <div class="association-slider">
+                <div class="slider-track">
+                    <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
+                    <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img"></a>
+                    <a href="https://www.nacdl.org/">
+                    <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
+                    </a>
+                    <a href="https://www.ncdd.com/">
+                    <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
+                    </a>
+                    <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
+                    <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
+                    </a>
+                    <a href="https://defensenet.org/about">
+                    <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
+                    </a>
+                    <a href="https://www.wacdl.org/about">
+                    <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
+                    </a>
+                    <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
+                    <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
+                    </a>
+                    <!-- Duplicate images for seamless loop -->
+                    <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
+                    <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img">
+                    </a>
+                    <a href="https://www.nacdl.org/">
+                    <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
+                    </a>
+                    <a href="https://www.ncdd.com/">
+                    <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
+                    </a>
+                    <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
+                    <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
+                    </a>
+                    <a href="https://defensenet.org/about">
+                    <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
+                    </a>
+                    <a href="https://www.wacdl.org/about">
+                    <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
+                    </a>
+                    <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
+                    <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
+                    <h3>Seattle Law Hawks</h3>
+                    <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/dui.html">DUIs 101</a></li>
+                        <li><a href="/contact.html">Free Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
+                    <p>Phone: (206) 453-1800</p>
+                    <p>Email: info@seahawklaw.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Seattle Law Hawks. All rights reserved.</p>
+                <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('faq-active');
+                const icon = question.querySelector('i');
+                if (item.classList.contains('faq-active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

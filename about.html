@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Seattle Law Hawks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #1a3c6e;
+            color: white;
+            padding: 15px 0;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #8CBF4B;
+        }
+        .consult-btn {
+            background-color: #8CBF4B;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: none;
+            display: inline-block;
+        }
+        .consult-btn:hover {
+            background-color: #6fdc6f;
+            color: #1a3c6e !important;
+        }
+        .about-hero {
+            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.8)), url('/city-seattle-with-text.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .about-main {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        .about-flex {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .about-profile-container {
+            flex: 2;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            padding: 40px 30px;
+            min-width: 320px;
+        }
+        .about-profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .about-profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            background: white;
+        }
+        .about-profile-content h2 {
+            color: #1a3c6e;
+            margin-bottom: 10px;
+        }
+        .about-profile-content p {
+            margin-bottom: 10px;
+        }
+        .about-profile-content .profile-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #8CBF4B;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .about-profile-content .profile-links a:hover {
+            color: #1a3c6e;
+        }
+        .about-experience {
+            margin-top: 30px;
+        }
+        .about-experience h3 {
+            color: #1a3c6e;
+            margin-bottom: 10px;
+        }
+        .about-experience ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .about-experience ul li {
+            margin-bottom: 8px;
+        }
+        .about-side {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            padding: 40px 30px;
+            min-width: 280px;
+        }
+        .about-side h3 {
+            color: #1a3c6e;
+            margin-bottom: 15px;
+        }
+        .about-side ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-side ul li {
+            margin-bottom: 12px;
+        }
+        .about-side ul li i {
+            color: #8CBF4B;
+            margin-right: 8px;
+        }
+        @media (max-width: 900px) {
+            .about-flex {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .about-profile-container, .about-side {
+                width: 100%;
+                min-width: 0;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .about-profile-header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .about-profile-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        /* Associations slider styles (reuse from index) */
+        .associations {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .association-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 30px;
+            height: 170px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+        }
+        .slider-track {
+            display: flex;
+            width: calc(170px * 14); /* 7 images * 2 for seamless loop */
+            animation: slide-assoc 18s linear infinite;
+        }
+        .slider-img {
+            width: 150px;
+            height: 150px;
+            margin: 0 10px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+        @keyframes slide-assoc {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1190px); } /* 7 images * 170px */
+        }
+        @media (max-width: 900px) {
+            .association-slider {
+                height: 110px;
+            }
+            .slider-img {
+                width: 90px;
+                height: 90px;
+            }
+            .slider-track {
+                width: calc(110px * 14);
+            }
+            @keyframes slide-assoc {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-770px); }
+            }
+        }
+        /* Footer styles (reuse from index) */
+        footer {
+            background-color: #0f2447;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #8CBF4B;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
+            color: #8CBF4B;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="/" class="logo">
+                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo">
+                    Seattle Law Hawks
+                </a>
+                <nav style="flex: 1; display: flex; justify-content: center;">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/dui.html">DUIs 101</a></li>
+                    </ul>
+                </nav>
+                <a href="/contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>We win with tough defense <br> <span style="font-size:1.3rem;">(206) 453-1800</span></h1>
+            <p>About Scott Lawrence, Attorney at Seattle Law Hawks</p>
+        </div>
+    </section>
+
+    <!-- About Main Section -->
+    <section class="about-main">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-profile-container">
+                    <div class="about-profile-header">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Scott Lawrence" class="about-profile-img">
+                        <div class="about-profile-content">
+                            <h2>Scott Weymouth Lawrence</h2>
+                            <p>
+                                Scott Weymouth Lawrence is an experienced trial attorney. Practicing criminal defense exclusively for 15 years, Mr. Lawrence has successfully represented clients at trial in municipal courts, district courts and superior courts throughout Washington State. About 50% of his cases have been DUI-related charges. The nature of the scientific evidence, professional witnesses and resources afforded the prosecution in these matters make DUI cases some of the most challenging to defend. Mr. Lawrence’s extensive trial experience extends to an array of misdemeanors and felonies as well. Having tried assaults, robberies, drug charges, theft, and so much more, Mr. Lawrence is an effective and well-rounded criminal defense trial attorney.
+                            </p>
+                            <p>
+                                What separates Scott Weymouth Lawrence from other trial attorneys is his experience beyond criminal law. He graduated from the University of Oregon, Knight School of Law in 2005 with a certificate in criminal defense practice. Mr. Lawrence has Bachelor of Science Degree in Chemistry from the University of Washington, as well as being certified as a Laboratory Chemist by the American Chemistry Society. He was also a lead case investigator for 12 years as a licensed private investigator with the State of Washington. Scott is a member of the National College of DUI Defense, National Association of Criminal Defense Lawyers, and Washington Association of Criminal Defense Lawyers. He holds a certification of the International Order of Police and the National Highway Traffic Safety Association to be able to administer the same roadside field sobriety tests given by police officers.
+                            </p>
+                            <p>
+                                Mr. Lawrence’s unique blend of knowledge and experience, possessing a background in criminal law, science, and investigation, are especially effective in complex criminal cases such as DUIs, sex crimes and DNA-related cases. Working on cases that range from violent crime to juvenile offenses to DUI, Scott employs this skills to work hard for you.
+                            </p>
+                            <div class="profile-links">
+                                <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html" target="_blank"><i class="fa fa-star"></i> Avvo Profile</a>
+                                <a href="mailto:info@seahawklaw.com"><i class="fa fa-envelope"></i> Email</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-experience">
+                        <h3>Why Choose Seattle Law Hawks?</h3>
+                        <ul>
+                            <li>Exclusive focus on DUI and criminal defense in Washington State</li>
+                            <li>Decades of trial experience in municipal, district, and superior courts</li>
+                            <li>Scientific background and investigative expertise</li>
+                            <li>Certified to administer police roadside field sobriety tests</li>
+                            <li>Member of leading defense organizations: NCDD, NACDL, WACDL</li>
+                            <li>Personalized, tough defense for every client</li>
+                        </ul>
+                    </div>
+                    <div class="about-experience">
+                        <h3>Our Office</h3>
+                        <ul>
+                            <li>Conveniently located blocks from the courthouses in Everett, WA</li>
+                            <li>Virtual consultations available to fit your schedule</li>
+                            <li>Free, confidential case consultations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-side">
+                    <h3>Credentials & Memberships</h3>
+                    <ul>
+                        <li><i class="fa fa-university"></i> University of Oregon, Knight School of Law (Criminal Defense Certificate)</li>
+                        <li><i class="fa fa-flask"></i> B.S. Chemistry, University of Washington</li>
+                        <li><i class="fa fa-vial"></i> Certified Laboratory Chemist, American Chemistry Society</li>
+                        <li><i class="fa fa-user-secret"></i> Licensed Private Investigator (12 years)</li>
+                        <li><i class="fa fa-users"></i> National College of DUI Defense (NCDD)</li>
+                        <li><i class="fa fa-users"></i> National Association of Criminal Defense Lawyers (NACDL)</li>
+                        <li><i class="fa fa-users"></i> Washington Association of Criminal Defense Lawyers (WACDL)</li>
+                        <li><i class="fa fa-certificate"></i> Certified by International Order of Police & NHTSA for field sobriety tests</li>
+                    </ul>
+                    <h3 style="margin-top:30px;">Contact & Consultation</h3>
+                    <p>Ready to discuss your case? <br>
+                        <a href="mailto:info@seahawklaw.com" style="color:#8CBF4B;">Email us</a> or call <a href="tel:2064531800" style="color:#8CBF4B;">(206) 453-1800</a> for a free, confidential consultation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Associations Section (same as index) -->
+    <section class="associations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Associations</h2>
+                <p>Recognized by leading legal organizations</p>
+            </div>
+            <div class="association-slider">
+                <div class="slider-track">
+                    <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
+                    <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img"></a>
+                    <a href="https://www.nacdl.org/">
+                    <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
+                    </a>
+                    <a href="https://www.ncdd.com/">
+                    <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
+                    </a>
+                    <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
+                    <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
+                    </a>
+                    <a href="https://defensenet.org/about">
+                    <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
+                    </a>
+                    <a href="https://www.wacdl.org/about">
+                    <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
+                    </a>
+                    <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
+                    <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
+                    </a>
+                    <!-- Duplicate images for seamless loop -->
+                    <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
+                    <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img">
+                    </a>
+                    <a href="https://www.nacdl.org/">
+                    <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
+                    </a>
+                    <a href="https://www.ncdd.com/">
+                    <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
+                    </a>
+                    <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
+                    <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
+                    </a>
+                    <a href="https://defensenet.org/about">
+                    <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
+                    </a>
+                    <a href="https://www.wacdl.org/about">
+                    <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
+                    </a>
+                    <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
+                    <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
+                    <h3>Seattle Law Hawks</h3>
+                    <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/dui.html">DUIs 101</a></li>
+                        <li><a href="/contact.html">Free Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
+                    <p>Phone: (206) 453-1800</p>
+                    <p>Email: info@seahawklaw.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Seattle Law Hawks. All rights reserved.</p>
+                <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the
