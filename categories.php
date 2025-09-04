@@ -335,7 +335,7 @@ while ($row = mysqli_fetch_assoc($res)) {
 <header>
     <div class="container">
         <div class="header-top">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
             </a>
             <div class="user-nav">

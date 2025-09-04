@@ -324,10 +324,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
     <div class="container">
         <div class="header-top">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
             </a>
-            <a href="/contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
         </div>
     </div>
 </header>
@@ -357,29 +356,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 <footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
-                <h3>Seahawk Law</h3>
-                <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="/blog.php">Blog</a></li>
-                    <li><a href="/dui.html">DUIs 101</a></li>
-                    <li><a href="/contact.html">Free Consultation</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
-                <p>Phone: (206) 555-0123</p>
-                <p>Email: info@seahawklaw.com</p>
-            </div>
-        </div>
         <div class="footer-bottom">
             <p>&copy; 2023 Seahawk Law. All rights reserved.</p>
             <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>

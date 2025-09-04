@@ -350,19 +350,19 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
 <header>
     <div class="container">
         <div class="header-top">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
             </a>
             <nav style="flex: 1; display: flex; justify-content: center;">
                 <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="/blog.php">Blog</a></li>
-                    <li><a href="/dui.html">DUIs 101</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="dui.html">DUIs 101</a></li>
                 </ul>
             </nav>
-            <a href="/contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
+            <a href="contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
         </div>
     </div>
 </header>
@@ -421,11 +421,11 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="/blog.php">Blog</a></li>
-                    <li><a href="/dui.html">DUIs 101</a></li>
-                    <li><a href="/contact.html">Free Consultation</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="dui.html">DUIs 101</a></li>
+                    <li><a href="contact.html">Free Consultation</a></li>
                 </ul>
             </div>
             <div class="footer-column">

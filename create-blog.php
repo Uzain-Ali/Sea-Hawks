@@ -7,6 +7,7 @@ if (!is_logged_in()) {
     exit;
 }
 
+$user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'] ?? 'User';
 
 // Fetch categories for dropdown
@@ -16,13 +17,40 @@ while ($row = mysqli_fetch_assoc($catResult)) {
     $categories[] = $row;
 }
 
+// Default values
+$title = '';
+$content = '';
+$category_id = '';
+$image_path = '';
 $error = '';
+$is_edit = false;
+
+// If editing, fetch blog
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $is_edit = true;
+    $blog_id = intval($_GET['id']);
+    $stmt = $conn->prepare("SELECT * FROM blogs WHERE id=? AND user_id=? LIMIT 1");
+    $stmt->bind_param("ii", $blog_id, $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result && $result->num_rows === 1) {
+        $blog = $result->fetch_assoc();
+        $title = $blog['title'];
+        $content = $blog['content'];
+        $category_id = $blog['category_id'];
+        $image_path = $blog['image_path'];
+    } else {
+        $error = "Blog not found or you do not have permission to edit.";
+        $is_edit = false;
+    }
+}
+
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
     $category_id = intval($_POST['category_id']);
-    $user_id = $_SESSION['user_id'];
-    $image_path = null;
+    $new_image_path = $image_path;
 
     // Handle image upload
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
@@ -35,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dest = 'uploads/' . $newName;
             if (!is_dir('uploads')) mkdir('uploads');
             if (move_uploaded_file($imgTmp, $dest)) {
-                $image_path = $dest;
+                $new_image_path = $dest;
             } else {
                 $error = "Image upload failed.";
             }
@@ -45,13 +73,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($title && $content && $category_id && !$error) {
-        $stmt = $conn->prepare("INSERT INTO blogs (user_id, category_id, title, content, image_path) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("iisss", $user_id, $category_id, $title, $content, $image_path);
-        if ($stmt->execute()) {
-            header('Location: blog.php');
-            exit;
+        if ($is_edit) {
+            // Update blog
+            $stmt = $conn->prepare("UPDATE blogs SET category_id=?, title=?, content=?, image_path=? WHERE id=? AND user_id=?");
+            $stmt->bind_param("isssii", $category_id, $title, $content, $new_image_path, $blog_id, $user_id);
+            if ($stmt->execute()) {
+                header('Location: my-blogs.php');
+                exit;
+            } else {
+                $error = "Failed to update blog post.";
+            }
         } else {
-            $error = "Failed to add blog post.";
+            // Create new blog
+            $stmt = $conn->prepare("INSERT INTO blogs (user_id, category_id, title, content, image_path) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("iisss", $user_id, $category_id, $title, $content, $new_image_path);
+            if ($stmt->execute()) {
+                header('Location: my-blogs.php');
+                exit;
+            } else {
+                $error = "Failed to add blog post.";
+            }
         }
     } elseif (!$error) {
         $error = "All fields are required.";
@@ -62,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Blog Post - Scott's Website</title>
+    <title><?= $is_edit ? 'Edit Blog Post' : 'Add Blog Post' ?> - Scott's Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <style>
         body {
@@ -339,29 +380,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
     <style>
-        body { background: #f8f9fa; }
+        body { color: #333; line-height: 1.6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f8f9fa;}
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        header { background-color: #1a3c6e; color: white; padding: 15px 0;}
+        .header-top { display: flex; justify-content: space-between; align-items: center;}
+        .logo { font-size: 28px; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center;}
+        .logo img { height: 60px; margin-right: 10px;}
+        .user-nav { display: flex; align-items: center; gap: 18px;}
+        .user-nav .user { color: #fff; font-weight: bold;}
+        .user-nav .fa-user { margin-right: 6px;}
+        .logout-btn { background: #d9534f; color: #fff; border: none; border-radius: 20px; padding: 7px 18px; font-weight: bold; cursor: pointer;}
+        .logout-btn:hover { background: #b52a24;}
         .form-container { max-width: 600px; margin: 60px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.07);}
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; color: #1a3c6e; }
-        input, select, textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
-        textarea { min-height: 120px; }
-        .btn { background: #8CBF4B; color: #fff; padding: 10px 22px; border-radius: 25px; border: none; font-weight: bold; width: 100%; }
-        .btn:hover { background: #1a3c6e; color: #fff; }
-        .error { color: #d00; margin-bottom: 15px; }
-        .user-nav { display: flex; align-items: center; gap: 18px; }
-        .user-nav .user { color: #fff; font-weight: bold; }
-        .user-nav .fa-user { margin-right: 6px; }
-        .logout-btn { background: #d9534f; color: #fff; border: none; border-radius: 20px; padding: 7px 18px; font-weight: bold; cursor: pointer; }
-        .logout-btn:hover { background: #b52a24; }
+        .form-group { margin-bottom: 20px;}
+        label { display: block; margin-bottom: 8px; color: #1a3c6e;}
+        input, select, textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;}
+        textarea { min-height: 120px;}
+        .btn { background: #8CBF4B; color: #fff; padding: 10px 22px; border-radius: 25px; border: none; font-weight: bold; width: 100%;}
+        .btn:hover { background: #1a3c6e; color: #fff;}
+        .error { color: #d00; margin-bottom: 15px;}
+        .blog-image-preview { margin-bottom: 15px; }
+        .blog-image-preview img { max-width: 100%; border-radius: 8px; }
     </style>
 </head>
 <body>
 <header>
     <div class="container">
         <div class="header-top">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
             </a>
+            <nav>
+                <ul style="display:flex;list-style:none;margin:0;padding:0;">
+                    <li><a href="my-blogs.php">My Blogs</a></li>
+                    <li><a href="create-blog.php">Create Blog</a></li>
+                    <li><a href="categories.php">Create Category</a></li>
+                </ul>
+            </nav>
             <div class="user-nav">
                 <span class="user"><i class="fa fa-user"></i><?= htmlspecialchars($user_name) ?></span>
                 <form action="logout.php" method="post" style="display:inline;">
@@ -372,39 +427,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </header>
 <div class="form-container">
-    <h2 style="color:#1a3c6e; margin-bottom:25px;">Add New Blog Post</h2>
+    <h2 style="color:#1a3c6e; margin-bottom:25px;"><?= $is_edit ? 'Edit Blog Post' : 'Add New Blog Post' ?></h2>
     <?php if ($error): ?><div class="error"><?= htmlspecialchars($error) ?></div><?php endif; ?>
+    <?php if ($is_edit && $image_path): ?>
+        <div class="blog-image-preview">
+            <label>Current Blog Image:</label>
+            <img src="<?= htmlspecialchars($image_path) ?>" alt="Blog Image">
+        </div>
+    <?php endif; ?>
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" required autofocus>
+            <input type="text" name="title" id="title" required autofocus value="<?= htmlspecialchars($title) ?>">
         </div>
         <div class="form-group">
             <label for="category_id">Category</label>
             <select name="category_id" id="category_id" required>
                 <option value="">Select Category</option>
                 <?php foreach ($categories as $cat): ?>
-                    <option value="<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></option>
+                    <option value="<?= $cat['id'] ?>" <?= $cat['id'] == $category_id ? 'selected' : '' ?>><?= htmlspecialchars($cat['name']) ?></option>
                 <?php endforeach; ?>
             </select>
             <a href="categories.php" class="btn" style="margin-top:10px;display:inline-block;width:auto;padding:8px 18px; text-decoration:none;">Create Category</a>
         </div>
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea name="content" id="content" required></textarea>
+            <textarea name="content" id="content" required><?= htmlspecialchars($content) ?></textarea>
         </div>
         <div class="form-group">
-            <label for="image">Blog Image (optional)</label>
+            <label for="image"><?= $is_edit ? 'Change Blog Image (optional)' : 'Blog Image (optional)' ?></label>
             <input type="file" name="image" id="image" accept="image/*">
         </div>
-        <button class="btn" type="submit">Add Blog</button>
+        <button class="btn" type="submit"><?= $is_edit ? 'Update Blog' : 'Add Blog' ?></button>
     </form>
 </div>
 <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Seahawk Law. All rights reserved.</p>
-            <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
-        </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Seahawk Law. All rights reserved.</p>
+        <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
+    </div>
 </footer>
 </body>
 </html>
