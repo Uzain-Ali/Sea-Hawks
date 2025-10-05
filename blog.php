@@ -36,6 +36,8 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            padding-top: 60px; 
+
         }
         .container {
             width: 100%;
@@ -320,7 +322,7 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
             }
         }
         .blog-post {
-            background: #fff;
+            background: linear-gradient(120deg, #fff 60%, #1a3c6e 100%);
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.07);
             margin-bottom: 0;
@@ -333,9 +335,46 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
         .blog-title { font-size: 1.15rem; color: #1a3c6e; margin-bottom: 7px; }
         .blog-meta { font-size: 0.93rem; color: #888; margin-bottom: 10px; }
         .blog-content { margin-bottom: 8px; font-size: 0.98rem; line-height: 1.5; }
+        .blog-hero {
+    background: linear-gradient(120deg, rgba(26,60,110,0.7) 70%, rgba(0,34,68,0.7) 100%), url('city-seattle-with-text.jpg') no-repeat center center/cover;
+    color: #8CBF4B;
+    padding: 80px 0 50px 0;
+    text-align: center;
+    position: relative;
+}
+.blog-hero-content {
+    display: inline-block;
+    padding: 40px 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.sticky-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.sticky-cta-bar.visible { transform: translateY(0);}
+.sticky-cta-bar .btn { margin: 0 auto; max-width: 300px; padding: 10px 20px; font-size: 1.1em; background: #8CBF4B; color: #1a3c6e; font-weight: bold;}
+.sticky-cta-bar .btn:hover { background: #002244; color: #8CBF4B;}
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1);
+    will-change: opacity, transform;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
         .category-list { margin-bottom: 30px; }
         .category-item { display: inline-block; background: #8CBF4B; color: #fff; padding: 6px 18px; border-radius: 25px; margin-right: 10px; margin-bottom: 8px; text-decoration: none; }
-        .latest-widget { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.07);}
+        .latest-widget { background: linear-gradient(90deg, #8CBF4B 0%, #fff 100%); padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.07);}
         .latest-widget .blog-title { font-size: 1.1rem; margin-bottom: 8px; }
         .btn { background: #8CBF4B; color: #fff; padding: 8px 18px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;}
         .btn:hover { background: #1a3c6e; color: #fff; }
@@ -347,6 +386,7 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
     </style>
 </head>
 <body>
+
 <header>
     <div class="container">
         <div class="header-top">
@@ -355,19 +395,33 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
             </a>
             <nav style="flex: 1; display: flex; justify-content: center;">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="dui.html">DUIs 101</a></li>
+                    <li><a href="#" onclick="loadPage('home', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Home</a></li>
+                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">About</a></li>
+                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Contact</a></li>
+                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a></li>
+                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">DUIs 101</a></li>
                 </ul>
             </nav>
-            <a href="contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
+            <a href="#" class="consult-btn btn" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a>
         </div>
     </div>
 </header>
+     <div id="main-content">
 
-<div class="container blog-layout">
+    <section class="blog-hero fade-in-section">
+    <div class="container blog-hero-content">
+        <h1><i class="fas fa-newspaper"></i> Seattle Law Hawks Blog</h1>
+        <p style="font-size:1.25rem; color:#fff; margin-bottom:18px;">
+            Insights, strategies, and updates from Seattle’s leading DUI defense team.<br>
+            Stay informed. Stay prepared. Play to win.
+        </p>
+        <p style="font-size:1.1rem; color:#8CBF4B;">
+            <i class="fa fa-phone"></i> <strong>(206) 453-1800</strong> &nbsp; | &nbsp; 
+            <i class="fa fa-envelope"></i> info@seahawklaw.com
+        </p>
+    </div>
+</section>
+<div class="container blog-layout fade-in-section">
     <div class="main-content">
         <h1 style="margin-top:40px; color:#1a3c6e;">Scott's Blog</h1>
         <!-- Categories -->
@@ -388,13 +442,13 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
                         Category: <?= htmlspecialchars($blog['category']) ?> |
                         <?= date('F j, Y', strtotime($blog['created_at'])) ?>
                     </div>
-                    <div class="blog-content"><?= nl2br(htmlspecialchars(substr($blog['content'],0,250))) ?>...</div>
+                    <div class="blog-content"><?= nl2br(htmlspecialchars(substr($blog['content'],0,100))) ?>...</div>
                     <a href="view-blog.php?id=<?= $blog['id'] ?>" class="btn">Read More</a>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="sidebar">
+    <div class="sidebar fade-in-section">
         <?php if ($latestBlog): ?>
         <div class="latest-widget">
             <h3>Latest Blog Post</h3>
@@ -410,7 +464,7 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
 </div>
 
 <!-- Footer (copy from index.html) -->
-<footer>
+<footer class="fade-in-section">
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
@@ -421,11 +475,11 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="dui.html">DUIs 101</a></li>
-                    <li><a href="contact.html">Free Consultation</a></li>
+                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;">About Us</a></li>
+                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Contact</a></li>
+                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;">Blog</a></li>
+                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;">DUIs 101</a></li>
+                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -441,5 +495,89 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
         </div>
     </div>
 </footer>
+        </div>
 </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sticky CTA Bar
+            const stickyBar = document.createElement('div');
+            stickyBar.className = 'sticky-cta-bar';
+            stickyBar.innerHTML = `<a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> Call (206) 453-1800 Now</a>`;
+            document.body.appendChild(stickyBar);
+
+            const heroSection = document.querySelector('.hero, .about-hero, .contact-hero, .blog-hero');
+            function toggleStickyCta() {
+                let triggerPoint = 0;
+                if (heroSection) {
+                    triggerPoint = heroSection.getBoundingClientRect().bottom;
+                }
+                if (triggerPoint < 0) {
+                    stickyBar.classList.add('visible');
+                } else {
+                    stickyBar.classList.remove('visible');
+                }
+            }
+            window.addEventListener('scroll', toggleStickyCta);
+            toggleStickyCta();
+        });
+
+        // Fade-in Animation for Sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-in-section');
+            const appearOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -20px 0px"
+            };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(section => {
+                appearOnScroll.observe(section);
+            });
+        });
+    </script>
+                <script>
+    function loadPage(page, targetSelector) {
+        fetch('route.php?page=' + encodeURIComponent(page))
+            .then(response => {
+                if (!response.ok) throw new Error('Page not found');
+                return response.text();
+            })
+            .then(html => {
+                const target = document.querySelector(targetSelector);
+                target.innerHTML = html;
+    
+                // Re-run fade-in animation for new content
+                const faders = target.querySelectorAll('.fade-in-section');
+                const appearOptions = {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -20px 0px"
+                };
+                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, appearOptions);
+    
+                faders.forEach(section => {
+                    appearOnScroll.observe(section);
+                });
+            })
+            .catch(err => {
+                document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
+            });
+    }
+    
+    // Example usage:
+    // loadPage('blog', '#main-content');
+    </script>
 </html>

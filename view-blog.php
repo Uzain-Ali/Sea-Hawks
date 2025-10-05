@@ -104,8 +104,7 @@ if ($latestResult && mysqli_num_rows($latestResult) > 0) {
         }
         .main-content {
             flex: 3;
-            background: #fff;
-            border-radius: 8px;
+            background: linear-gradient(120deg, #fff 60%, #1a3c6e 100%);            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.07);
             padding: 40px;
             margin: 40px 0;
@@ -132,8 +131,7 @@ if ($latestResult && mysqli_num_rows($latestResult) > 0) {
             object-fit: cover;
         }
         .latest-widget {
-            background: #f8f9fa;
-            padding: 20px;
+            background: linear-gradient(90deg, #8CBF4B 0%, #fff 100%);            padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.07);

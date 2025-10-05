@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
-            header('Location: create-blog.php'); // Redirect to create-blog page
+            header('Location: my-blogs.php'); // Redirect to create-blog page
             exit;
         } else {
             $error = 'Invalid email or password.';
@@ -338,7 +338,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <button class="btn" type="submit">Login</button>
     </form>
-    <a href="register.php" class="link">Don't have an account? Register</a>
+    <!-- <a href="register.php" class="link">Don't have an account? Register</a> -->
 </div>
 <footer>
     <div class="container">

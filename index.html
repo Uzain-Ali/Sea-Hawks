@@ -3,933 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seahawk Law - Seattle DUI Defense</title>
+    <title>Seattle DUI Attorney | Seattle Law Hawks Defense Team</title>
+    <meta name="description" content="Charged with a DUI in Seattle? The Law Hawks bring science, strategy & grit to fight for your license, freedom, and future. Free consultation.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: #1a3c6e;
-            color: white;
-            padding: 15px 0;
-        }
-        
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            color: #ffcc00;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #8CBF4B;
-        }
-            .consult-btn {
-        background-color: #8CBF4B;
-        color: white !important;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: background 0.3s;
-        border: none;
-        display: inline-block;
-    }
-    .consult-btn:hover {
-        background-color: #8CBF4B;
-        color: #1a3c6e !important;
-    }
-        
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.8)), url('city-seattle-with-text.jpg') no-repeat center center/cover;
-            background-attachment: scroll;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        @media (max-width: 900px) {
-            .hero-person-img {
-                width: 180px;
-                right: 2%;
-            }
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #8CBF4B;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #8CBF4B;
-            color: #1a3c6e;
-
-        }
-        
-        .phone-number {
-            display: block;
-            margin-top: 20px;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-        
-        /* Why Choose Section */
-        .why-choose {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #1a3c6e;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            max-width: 280px;
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature i {
-            font-size: 2.5rem;
-            color: #8CBF4B;
-            margin-bottom: 20px;
-        }
-        
-        .feature h3 {
-            margin-bottom: 15px;
-            color: #1a3c6e;
-        }
-        
-        /* Associations */
-        .associations {
-            padding: 50px 0;
-            text-align: center;
-        }
-        
-        .association-logos {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-        }
-        
-        .association-logo {
-            width: 150px;
-            height: 150px;
-            background-color: #f8f9fa;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #1a3c6e;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-       .hero-flex {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            gap: 60px;
-        }
-        .hero-img-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            min-height: 380px;
-        }
-        .hero-person-img {
-            display: block;
-            object-fit: cover;
-            border-radius: 50%;
-
-        }
-        .hero-content {
-            text-align: center;
-            flex: 2;
-        }
-        @media (max-width: 900px) {
-            .hero-flex {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 40px;
-            }
-            .hero-content {
-                text-align: center;
-                margin-left: 0;
-            }
-            .hero-img-wrapper {
-                width: 100%;
-                justify-content: center;
-                margin-bottom: 0;
-                min-height: auto;
-            }
-            .hero-person-img {
-                width: 280px;
-                height: 280px;
-            }
-        }
-.association-slider {
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: #fff;
+    padding-top: 60px;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    overflow: hidden;
+    z-index: 100;
+    background: #1a3c6e;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.08);
+}
+        .container { width: 95%; max-width: 1200px; margin: 0 auto; padding: 0 10px; }
+        .consult-btn.btn {
+    background: #8CBF4B;
+    color: #1a3c6e !important;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    display: inline-block;
+}
+.consult-btn.btn:hover {
+    background: #1a3c6e;
+    color: #8CBF4B !important;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin-left: 25px;
+    margin-right: 0;
+    display: inline-block;
+}
+/* --- HERO --- */
+.hero { 
+    background: linear-gradient(120deg, rgba(26,60,110,0.7) 70%, rgba(0,34,68,0.7) 100%), url('city-seattle-with-text.jpg') no-repeat center center/cover; 
+    color: #8CBF4B; 
+    padding: 100px 0 60px; 
+    text-align: center; 
     position: relative;
-    margin-top: 30px;
-    height: 170px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    display: flex;
-    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
-.slider-track {
-    display: flex;
-    width: calc(170px * 14); /* 7 images * 2 for seamless loop */
-    animation: slide-assoc 18s linear infinite;
+.hero-content { 
+    display: inline-block; 
+    padding: 40px 30px; 
+    border-radius: 18px; 
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
-.slider-img {
-    width: 150px;
-    height: 150px;
-    margin: 0 10px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-}
-@keyframes slide-assoc {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1190px); } /* 7 images * 170px */
-}
-@media (max-width: 900px) {
-    .association-slider {
-        height: 110px;
-    }
-    .slider-img {
-        width: 90px;
-        height: 90px;
-    }
-    .slider-track {
-        width: calc(110px * 14);
-    }
-    @keyframes slide-assoc {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-770px); }
-    }
-}
-/* ...existing code... */
-@media (max-width: 900px) {
-    .profile-contact-flex {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .profile-contact-flex .form-container,
-    .form-container1 {
-        margin-left: 0;
-        max-width: 100%;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    /* Stack attorney image and text vertically on mobile */
-    .form-container1 > div[style*="display: flex"] {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-    }
-    .profile-image {
-        margin-bottom: 10px;
-    }}
-      /* How We Help */
-        .how-we-help {
-            padding: 80px 0;
-            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.8)), url('city-seattle-with-text.jpg') no-repeat center center/cover;
-            color: white;
-        }
-        
-        .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 250px;
-            max-width: 280px;
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        
-        .step-number {
-            display: inline-block;
-            color: #8CBF4B;
-            line-height: 50px;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .step-number i.fa-phone-square,
-.step-number i.fa-solid.fa-file,
-.step-number i.fa-gavel {
-    font-size: 2.8rem;
-}
-        /* Contact Form */
-
-/* Add below your existing styles */
-.profile-contact {
-    padding: 80px 0;
-    background-color: #f8f9fa;
-}
-.profile-contact-flex {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.profile-contact-flex .profile-image img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin-bottom: 20px;
-}
-.profile-contact-flex .profile-content {
-    flex: 2;
-    min-width: 250px;
-}
-.profile-contact-flex .form-container {
-    flex: 2;
-    min-width: 320px;
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-left: 40px;
-}
-@media (max-width: 900px) {
-    .profile-contact-flex {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .profile-contact-flex .form-container {
-        margin-left: 0;
-    }
-}
-
-        .contact-form {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .form-container1 {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-container .btn[type="submit"] {
-    width: 100%;
-    display: block;
+.hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; letter-spacing: 2px; }
+.hero p { font-size: 1.3rem; margin-bottom: 30px; color: #fff; }
+.btn { background: #8CBF4B; color: #1a3c6e; font-weight: bold; border-radius: 25px; padding: 12px 32px; font-size: 1.2rem; text-decoration: none; transition: background 0.3s; display: inline-block; margin: 10px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);}
+.btn:hover { background: #1a3c6e; color: #fff; }
+/* --- SCOTT LAWRENCE --- */
+.coach-section { 
+    background: linear-gradient(90deg, #8CBF4B 0%, #fff 100%);
+    padding: 60px 0 40px;
     text-align: center;
 }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-        }
-        
-        /* Attorney Profile */
-        .attorney-profile {
-            padding: 80px 0;
-        }
-        
-        .profile-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .profile-image {
-            flex: 1;
-            max-width: 400px;
-        }
-        
-        .profile-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .profile-content {
-            flex: 2;
-        }
-        
-        /* FAQ Section */
-        .faq {
-            padding: 5px 0;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-question {
-            padding: 20px;
-            background-color: #1a3c6e;
-            color: white;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-answer {
-            padding: 20px;
-            display: none;
-        }
-        
-        .faq-active .faq-answer {
-            display: block;
-        }
-        
-        /* Call to Action */
-        .cta {
-            padding: 80px 0;
-            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('city-seattle-with-text.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0f2447;
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 20px;
-            color: #8CBF4B;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #8CBF4B;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-top {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 10px;
-            }
-            
-            .profile-container {
-                flex-direction: column;
-            }
-            
-            .profile-image {
-                max-width: 100%;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
+.coach-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
+.coach-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(26,60,110,0.08); padding: 30px 24px; min-width: 260px; max-width: 320px; transition: transform 0.2s; }
+.coach-card:hover { transform: scale(1.05) rotate(-2deg);}
+.coach-card i { font-size: 2.5rem; color: #1a3c6e; margin-bottom: 12px; }
+.coach-card h3 { color: #002244; margin-bottom: 10px; }
+/* --- SCIENCE SECTION --- */
+.science-section { 
+    background: linear-gradient(120deg, #fff 60%, #8CBF4B 100%);
+    padding: 60px 0 40px;
+}
+.science-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.science-card { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 28px 22px; min-width: 250px; max-width: 350px; position: relative; }
+.science-card:before { content: ""; position: absolute; left: 0; top: 0; width: 8px; height: 100%; background: #1a3c6e; border-radius: 14px 0 0 14px; }
+.science-card i { font-size: 2rem; color: #8CBF4B; margin-bottom: 10px; }
+.science-card h3 { color: #1a3c6e; }
+/* --- GAME STATS --- */
+.stats-section { 
+    background: linear-gradient(90deg, #1a3c6e 70%, #002244 100%);
+    color: #8CBF4B;
+    padding: 70px 0 50px;
+    position: relative;
+}
+.stats-title { text-align: center; font-size: 2.2rem; font-weight: 900; margin-bottom: 30px; letter-spacing: 1px;}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 30px; }
+.stats-card { background: rgba(255,255,255,0.08); border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); padding: 28px 22px; color: #fff; position: relative; }
+.stats-card i { font-size: 2rem; color: #8CBF4B; margin-bottom: 10px; }
+.stats-card h4 { color: #8CBF4B; margin-bottom: 10px; font-size: 1.2rem; }
+.stats-card ul { list-style: none; padding: 0; margin: 0; }
+.stats-card ul li { margin-bottom: 8px; font-size: 1.05rem; }
+/* --- WHY HIRE --- */
+.why-section { 
+    background: linear-gradient(120deg, #fff 60%, #1a3c6e 100%);
+    padding: 60px 0 40px;
+}
+.why-list { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 28px 22px; max-width: 700px; margin: 0 auto 30px auto; }
+.why-list li { font-size: 1.1rem; margin-bottom: 12px; }
+.why-list li:before { content: "🏈 "; color: #1a3c6e; font-size: 1.2rem; }
+.court-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px;}
+.court-tag { background: #1a3c6e; color: #8CBF4B; padding: 8px 18px; border-radius: 18px; font-weight: 700; font-size: 1rem; }
+/* --- CTA --- */
+.cta { 
+    background: linear-gradient(120deg, #8CBF4B 70%, #1a3c6e 100%);
+    color: #1a3c6e;
+    padding: 70px 0 50px;
+    text-align: center;
+}
+.cta .btn { background: #1a3c6e; color: #8CBF4B; font-weight: bold; }
+.cta .btn:hover { background: #8CBF4B; color: #1a3c6e; }
+/* --- FOOTER --- */
+footer { background: #002244; color: #fff; padding: 60px 0 30px; }
+.footer-content { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.footer-column { flex: 1; min-width: 250px; }
+.footer-column h3 { margin-bottom: 20px; color: #8CBF4B; }
+.footer-column ul { list-style: none; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a { color: #8CBF4B; text-decoration: none; transition: color 0.3s; }
+.footer-column ul li a:hover { color: #1a3c6e; }
+.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+/* --- Fade-in Animation --- */
+.fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1); will-change: opacity, transform;}
+.fade-in-section.is-visible { opacity: 1; transform: none;}
+/* --- Sticky CTA Bar --- */
+.sticky-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.sticky-cta-bar.visible { transform: translateY(0);}
+.sticky-cta-bar .btn { margin: 0 auto; max-width: 300px; padding: 10px 20px; font-size: 1.1em; background: #8CBF4B; color: #1a3c6e; font-weight: bold;}
+.sticky-cta-bar .btn:hover { background: #002244; color: #8CBF4B;}
+@media (max-width: 900px) {
+    .coach-cards, .science-grid, .stats-grid { flex-direction: column; display: block; }
+    .footer-content { flex-direction: column; gap: 20px; }
+}
     </style>
 </head>
 <body>
     <!-- Header -->
-<header>
+     <div id="main-content">
+<header class="fade-in-section">
     <div class="container">
-        <div class="header-top">
+        <div class="header-top" style="display: flex; align-items: center; justify-content: space-between;">
             <a href="index.html" class="logo">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
+                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px;">
             </a>
             <nav style="flex: 1; display: flex; justify-content: center;">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="dui.html">DUIs 101</a></li>
+                    <li><a href="#" onclick="loadPage('home', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Home</a></li>
+                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">About</a></li>
+                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Contact</a></li>
+                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a></li>
+                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">DUIs 101</a></li>
                 </ul>
             </nav>
-            <a href="contact.html" class="consult-btn" style="margin-left: 10px;">Free Consultation</a>
+            <a href="#" class="consult-btn btn" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a>
         </div>
     </div>
 </header>
+
     <!-- Hero Section -->
-<section class="hero">
-    <div class="container hero-flex">
-        <div class="hero-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Attorney" class="hero-person-img">
+    <section class="hero fade-in-section">
+        <div class="container hero-content">
+            <h1><i class="fas fa-football-ball"></i> Seattle DUI Lawyer: Science, Strategy, and Grit in Every Case.</h1>
+            <p>A DUI charge in Seattle is <strong>Game Time</strong>. Your license, your freedom, and your future are all on the line. The clock is running, and the State is building its case. You don't get a do-over.<br>
+            At Seattle Law Hawks, we bring a complete, championship-level game plan to your defense—from fighting the Department of Licensing hearing to prevent license suspension, to challenging the State's evidence in court, all the way to a jury trial if necessary. Whether you've just been arrested or have already been charged, we're ready to take the field for you.</p>
+            <a href="contact.html" class="btn"><i class="fas fa-calendar-check"></i> Schedule Your Free Consultation</a>
         </div>
-        <div class="hero-content">
-            <h1>Seattle DUI Defense You Can Trust</h1>
-            <p>Charged with DUI in Seattle? Get experienced legal defense today.</p>
-            <a href="contact.html" class="btn">Request a Free Consultation</a>
-            <span class="phone-number">(206) 555-0123</span>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Why Choose Section -->
-    <section class="why-choose">
+    <!-- Scott Lawrence Section -->
+    <section class="coach-section fade-in-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Seahawk Law</h2>
-                <p>Experience and dedication you can rely on</p>
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> Meet Your Defensive MVP</h2>
+            <p style="font-size:1.2em;">Scott Lawrence: Seattle's Veteran DUI Defense Lawyer</p>
+            <div class="coach-cards">
+                <div class="coach-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Criminal Law</h3>
+                    <p>20+ years of DUI trial defense. Scott knows the courtroom, the judges, and the most effective legal arguments to challenge the State.</p>
+                </div>
+                <div class="coach-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Chemistry</h3>
+                    <p>B.S. in Chemistry (UW), Certified Chemist (ACS). He can dissect and challenge the "science" behind your breath and blood tests, exposing errors other lawyers miss.</p>
+                </div>
+                <div class="coach-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Investigation</h3>
+                    <p>12 years as a licensed Private Investigator. He knows how to "scout the opponent," uncover hidden evidence, find holes in police procedure, and dismantle the State's case.</p>
+                </div>
             </div>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>20+ Years of DUI Defense Experience</h3>
-                    <p>Two decades of focused practice in DUI law</p>
+            <p style="text-align:center; margin-top:30px;">When the stakes couldn't be higher, you need a defense built on Law, Science, and Strategy.</p>
+        </div>
+    </section>
+
+    <!-- Science of DUI Defense Section -->
+    <section class="science-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-microscope"></i> The Science of DUI Defense</h2>
+            <p style="font-size:1.1em;text-align:center;">Breath and Blood Under the Microscope</p>
+            <div class="science-grid">
+                <div class="science-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Breath Tests</h3>
+                    <ul>
+                        <li>Draeger Alcotest machines must be calibrated, maintained, and operated correctly.</li>
+                        <li>Errors, contamination, and medical conditions can throw off results.</li>
+                        <li><strong>Defense Advantage:</strong> Scott exposes when the machines don’t work.</li>
+                    </ul>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Hundreds of Successful DUI Cases</h3>
-                    <p>Proven track record of achieving positive outcomes</p>
+                <div class="science-card">
+                    <i class="fas fa-vial"></i>
+                    <h3>Blood Tests</h3>
+                    <ul>
+                        <li>Vulnerable to mistakes in storage, handling, and lab analysis.</li>
+                        <li>Chain of custody errors, fermentation, or faulty gas chromatography can skew results.</li>
+                        <li><strong>Defense Advantage:</strong> Scott cross-examines lab analysts and digs into raw data.</li>
+                    </ul>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-building"></i>
-                    <h3>Serving Seattle Municipal Court Exclusively</h3>
-                    <p>Deep knowledge of local courts and procedures</p>
+            </div>
+            <p class="science-conclusion">When the State relies on "science" to convict you, Scott Lawrence brings <strong>better science</strong> to your defense.</p>
+        </div>
+    </section>
+
+    <!-- Game Stats Section -->
+    <section class="stats-section fade-in-section">
+        <div class="container">
+            <div class="stats-title"><i class="fas fa-chart-bar"></i> Game Stats: Seattle DUI Defense Quick Facts</div>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>🏟️ Home Field</h4>
+                    <ul>
+                        <li>Seattle, King County, Greater Puget Sound</li>
+                    </ul>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-comments"></i>
-                    <h3>Free, Confidential Consultation</h3>
-                    <p>Discuss your case with no obligation</p>
+                <div class="stats-card">
+                    <i class="fas fa-stopwatch"></i>
+                    <h4>⏱️ Shot Clock (Deadlines)</h4>
+                    <ul>
+                        <li>7 days: Request DOL hearing</li>
+                        <li>15 days: Arraignment after arrest</li>
+                        <li>Don't miss the deadlines!</li>
+                    </ul>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>🎯 Legal BAC Limits</h4>
+                    <ul>
+                        <li>.08+ Adults (21+)</li>
+                        <li>.04+ CDL drivers</li>
+                        <li>.02+ Under 21</li>
+                        <li>Even below the limit? State can still call you impaired</li>
+                    </ul>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-gavel"></i>
+                    <h4>⚖️ Penalties (First Offense)</h4>
+                    <ul>
+                        <li>License suspension: 90 days minimum</li>
+                        <li>Jail: 1 day mandatory (up to 364 days)</li>
+                        <li>Fines & Fees: $990+</li>
+                        <li>IID required</li>
+                    </ul>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-flask"></i>
+                    <h4>📊 Science in Play</h4>
+                    <ul>
+                        <li>Breath Tests: Prone to error</li>
+                        <li>Blood Tests: Vulnerable to lab issues</li>
+                        <li>Defense Advantage: Scott's chemistry expertise</li>
+                    </ul>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>🏆 Player Profile</h4>
+                    <ul>
+                        <li>20+ Years defending DUIs</li>
+                        <li>B.S. Chemistry – UW</li>
+                        <li>Certified Chemist – ACS</li>
+                        <li>12 Years PI</li>
+                        <li>Thousands of cases handled</li>
+                    </ul>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>🚚 Special Teams</h4>
+                    <ul>
+                        <li>CDL & Trucking Cases</li>
+                        <li>Protecting careers on the line</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Associations -->
-<section class="associations">
-    <div class="container">
-        <div class="section-title">
-            <h2>Professional Associations</h2>
-            <p>Recognized by leading legal organizations</p>
-        </div>
-        <div class="association-slider">
-            <div class="slider-track">
-                <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
-                <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img"></a>
-                <a href="https://www.nacdl.org/">
-                <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
-                </a>
-                <a href="https://www.ncdd.com/">
-                <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
-                </a>
-                <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
-                <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
-                </a>
-                <a href="https://defensenet.org/about">
-                <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
-                </a>
-                <a href="https://www.wacdl.org/about">
-                <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
-                </a>
-                <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
-                <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
-                </a>
-                <!-- Duplicate images for seamless loop -->
-                 <a href="https://www.avvo.com/attorneys/98201-wa-scott-lawrence-37152.html">
-                <img src="image/top.PNG" alt="Top Contributor Award 2021" class="slider-img">
-                </a>
-                <a href="https://www.nacdl.org/">
-                <img src="image/national-association-of-criminal-defense-lawyers-sm.jpg" alt="Association 2" class="slider-img">
-                </a>
-                <a href="https://www.ncdd.com/">
-                <img src="image/ncdd-member.png" alt="Association 3" class="slider-img">
-                </a>
-                <a href="https://www.mywsba.org/PersonifyEbusiness/LegalDirectory/LegalProfile.aspx?Usr_ID=000000037734">
-                <img src="image/wsba-logo-sm.jpg" alt="Association 4" class="slider-img">
-                </a>
-                <a href="https://defensenet.org/about">
-                <img src="image/washington-defenders-association-sm.jpg" alt="Association 5" class="slider-img">
-                </a>
-                <a href="https://www.wacdl.org/about">
-                <img src="image/wacdl-sm.jpg" alt="Association 6" class="slider-img">
-                </a>
-                <a href="https://www.washingtonjustice.org/index.cfm?pg=FindAnAttorney&dirAction=SearchResults&fs_match=s&m_firstname=scott&m_lastname=lawrence&seed=453206">
-                <img src="image/association-for-justice-sm.jpg" alt="Association 7" class="slider-img">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- How We Help -->
-    <section class="how-we-help">
+    <!-- Why Hire Section -->
+    <section class="why-section fade-in-section">
         <div class="container">
-            <div class="section-title" style="color: white;">
-                <h2>How We Help</h2>
-                <p>Our simple process to protect your rights</p>
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Why Hire Seattle Law Hawks?</h2>
+            <p style="font-size:1.1em;text-align:center;">Dismissals, Favorable Settlements, and Trial Wins</p>
+            <ul class="why-list">
+                <li>Thousands of cases handled—prosecutors know we prepare, judges know we fight hard.</li>
+                <li>Every case is a championship game: aggressive, relentless advocacy.</li>
+                <li>Our goal: Dismissals when possible, favorable settlements when practical, trial wins when necessary.</li>
+                <li>We represent clients facing First Offense, Repeat Offenses, and CDL-Holder cases across King County and the Greater Seattle Area.</li>
+            </ul>
+            <div class="court-tags">
+                <span class="court-tag">Seattle Municipal Court</span>
+                <span class="court-tag">King County District Courts</span>
+                <span class="court-tag">Bellevue</span>
+                <span class="court-tag">Redmond</span>
+                <span class="court-tag">Bothell</span>
+                <span class="court-tag">Shoreline</span>
+                <span class="court-tag">Kenmore</span>
+                <span class="court-tag">Lake Forest Park</span>
             </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
-                    <h3>Call Us or Fill Out the Form</h3>
-                    <p>Reach out for a free initial consultation</p>
-                </div>
-                <div class="step">
-                    <div class="step-number"><i class="fa-solid fa-file"></i></div>
-                    <h3>Get a Case Review</h3>
-                    <p>We'll analyze your situation and options</p>
-                </div>
-                <div class="step">
-                    <div class="step-number"><i class="fa fa-gavel"></i></div>
-                    <h3>Start Your Defense Immediately</h3>
-                    <p>We begin building your case right away</p>
-                </div>
-            </div>
+            <p style="text-align:center; margin-top:30px;">Wherever the whistle blows, we're ready to compete.</p>
         </div>
     </section>
 
-<section class="profile-contact">
-    <div class="container">
-        <div class="profile-contact-flex">
-            <!-- Left Side: Attorney Profile (image + text side by side) + FAQ below -->
-            <div style="flex: 2; min-width: 350px;">
-                            <div class="form-container1">
-
-                <div style="display: flex; align-items: flex-start; gap: 30px;">
-                    <div class="profile-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Scott Lawrence">
-                    </div>
-                    <div class="profile-content">
-                        <h2>Scott Lawrence</h2>
-                        <p>Scott Lawrence is dedicated to
-                        defending individuals charged
-                        with DUI in Seattle. With over two
-                        decades of experience and deep
-                        understanding of Washington DUI
-                        cases, he is committed to
-                        achieving the best possible
-                        outcomes for his clients.</p>
-                        <a href="#" class="btn">Learn More About Scott</a>
-                    </div>
-                </div>
-                </div>
-                <!-- FAQ Section directly beneath attorney profile -->
-                <div class="form-container1 " style="margin-top: 20px;">
-
-                <div class="faq">
-                    <div class="section-title" style="text-align:left;">
-                        <h2>Frequently Asked Questions</h2>
-                        <p>Get answers to common DUI defense questions</p>
-                    </div>
-                    <div class="faq-items">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                How can a DUI Attorney help me?
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>A DUI attorney can protect your rights, challenge evidence, negotiate with prosecutors, and potentially reduce or dismiss charges. They understand the complexities of DUI law and can navigate the legal system on your behalf.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                What are the penalties for a DUI in Seattle?
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Penalties can include license suspension, fines, jail time, mandatory alcohol education programs, and installation of an ignition interlock device. The severity depends on factors like BAC level and prior offenses.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                What happens after I'm charged with a DUI?
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>After being charged, you'll have an arraignment where you enter a plea. Then there may be pre-trial motions, negotiations, and possibly a trial. It's crucial to have an attorney guide you through each step.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                Will I lose my driver's license?
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Depending on the circumstances, your license may be suspended. However, an attorney can often help you request a hearing to challenge the suspension or obtain a restricted license for essential driving needs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-            <div class="form-container">
-                <div class="section-title" style="text-align:left;">
-                    <h2>Request a Free Consultation</h2>
-                    <p>Your Court Date is Coming Up – Don't Wait</p>
-                </div>
-                <form action="send-contact.php" method="post">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="court-date">Court Date</label>
-                        <input type="date" id="court-date">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Call to Action -->
-    <section class="cta">
+    <!-- CTA Section -->
+    <section class="cta fade-in-section">
         <div class="container">
-            <h2>Call Now to Fight Your DUI Case</h2>
-            <a href="tel:2064531800" class="btn">(206) 453-1800</a>
+            <h2><i class="fas fa-stopwatch"></i> Game Time: Schedule Your Free Consultation Today</h2>
+            <p style="font-size:1.2em;">When you're staring down a DUI charge in Seattle, you need a proven competitor in your corner. Don’t wait until the fourth quarter to call a timeout.<br>
+            Put an experienced Seattle DUI attorney on your team today—and let’s start building your defense.</p>
+            <a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> (206) 453-1800</a>
+            <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> Contact Us Online</a>
         </div>
     </section>
 
     <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
-                <h3>Seahawk Law</h3>
-                <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
+    <footer class="fade-in-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
+                    <h3>Seattle Law Hawks</h3>
+                    <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="loadPage('about', '#main-content'); return false;">About Us</a></li>
+                        <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Contact</a></li>
+                        <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;">Blog</a></li>
+                        <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;">DUIs 101</a></li>
+                        <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
+                    <p>Phone: (206) 453-1800</p>
+                    <p>Email: info@seahawklaw.com</p>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="dui.html">DUIs 101</a></li>
-                    <li><a href="contact.html">Free Consultation</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
-                <p>Phone: (206) 555-0123</p>
-                <p>Email: info@seahawklaw.com</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Seattle Law Hawks. All rights reserved.</p>
+                <p><a href="#" style="color: #FFC72C;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Seahawk Law. All rights reserved.</p>
-            <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
+</div>
+    <!-- Sticky CTA Bar Script & Fade-in Script -->
     <script>
-        // FAQ toggle functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('faq-active');
-                
-                const icon = question.querySelector('i');
-                if (item.classList.contains('faq-active')) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                } else {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create sticky CTA bar once
+            if (!document.querySelector('.sticky-cta-bar')) {
+                const stickyBar = document.createElement('div');
+                stickyBar.className = 'sticky-cta-bar';
+                stickyBar.innerHTML = `<a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> Call (206) 453-1800 Now</a>`;
+                document.body.appendChild(stickyBar);
+            }
+        
+            function getHeroSection() {
+                // Look for any hero section in the current DOM
+                return document.querySelector('.hero, .about-hero, .contact-hero, .blog-hero');
+            }
+        
+            function toggleStickyCta() {
+                const stickyBar = document.querySelector('.sticky-cta-bar');
+                const heroSection = getHeroSection();
+                let triggerPoint = 0;
+                if (heroSection) {
+                    triggerPoint = heroSection.getBoundingClientRect().bottom;
                 }
+                if (triggerPoint < 0) {
+                    stickyBar.classList.add('visible');
+                } else {
+                    stickyBar.classList.remove('visible');
+                }
+            }
+        
+            window.addEventListener('scroll', toggleStickyCta);
+        
+            // Re-run toggleStickyCta after AJAX loads new content
+            const observer = new MutationObserver(toggleStickyCta);
+            observer.observe(document.getElementById('main-content'), { childList: true, subtree: true });
+        
+            // Initial check
+            toggleStickyCta();
+        });
+
+        // Fade-in Animation for Sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-in-section');
+            const appearOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -20px 0px"
+            };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(section => {
+                appearOnScroll.observe(section);
             });
         });
+    </script>
+                <script>
+    function loadPage(page, targetSelector) {
+        fetch('route.php?page=' + encodeURIComponent(page))
+            .then(response => {
+                if (!response.ok) throw new Error('Page not found');
+                return response.text();
+            })
+            .then(html => {
+                const target = document.querySelector(targetSelector);
+                target.innerHTML = html;
+    
+                // Re-run fade-in animation for new content
+                const faders = target.querySelectorAll('.fade-in-section');
+                const appearOptions = {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -20px 0px"
+                };
+                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, appearOptions);
+    
+                faders.forEach(section => {
+                    appearOnScroll.observe(section);
+                });
+            })
+            .catch(err => {
+                document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
+            });
+    }
+    // Example usage:
     </script>
 </body>
 </html>
