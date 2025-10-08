@@ -309,18 +309,11 @@ body {
     <!-- Sticky CTA Bar Script & Fade-in Script -->
      <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create sticky CTA bar once
-            if (!document.querySelector('.sticky-cta-bar')) {
-                const stickyBar = document.createElement('div');
-                stickyBar.className = 'sticky-cta-bar';
-                stickyBar.innerHTML = `<a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> Call (206) 453-1800 Now</a>`;
-                document.body.appendChild(stickyBar);
-            }
+        function initStickyCtaBar() {
+            createStickyCtaBar();
         
             function getHeroSection() {
-                // Look for any hero section in the current DOM
-                return document.querySelector('.hero, .about-hero, .contact-hero, .blog-hero');
+                return document.querySelector('.hero, .about-hero, .contact-hero, .blog-hero, .marijuana-hero, .dui-hero');
             }
         
             function toggleStickyCta() {
@@ -337,15 +330,21 @@ body {
                 }
             }
         
+            window.removeEventListener('scroll', toggleStickyCta); // Remove previous
             window.addEventListener('scroll', toggleStickyCta);
         
             // Re-run toggleStickyCta after AJAX loads new content
+            const mainContent = document.getElementById('main-content');
+            if (mainContent._stickyCtaObserver) {
+                mainContent._stickyCtaObserver.disconnect();
+            }
             const observer = new MutationObserver(toggleStickyCta);
-            observer.observe(document.getElementById('main-content'), { childList: true, subtree: true });
+            observer.observe(mainContent, { childList: true, subtree: true });
+            mainContent._stickyCtaObserver = observer;
         
             // Initial check
             toggleStickyCta();
-        });
+        }
 
         // Fade-in Animation for Sections
         document.addEventListener('DOMContentLoaded', function() {
@@ -399,14 +398,16 @@ body {
                 });
                             // Re-initialize navbar dropdown JS
                 initNavbarDropdown();
+                initStickyCtaBar();
             })
             .catch(err => {
                 document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
             });
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     initNavbarDropdown();
+    initStickyCtaBar();
 });
     </script>
 

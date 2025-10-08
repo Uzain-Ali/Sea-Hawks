@@ -33,3 +33,13 @@ function initNavbarDropdown() {
     });
   });
 }
+
+function createStickyCtaBar() {
+    if (!document.querySelector('.sticky-cta-bar')) {
+        const stickyBar = document.createElement('div');
+        stickyBar.className = 'sticky-cta-bar';
+        stickyBar.innerHTML = `<a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> Call (206) 453-1800 Now</a>`;
+        document.body.appendChild(stickyBar);
+    }
+}
+
