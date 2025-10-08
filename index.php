@@ -7,6 +7,8 @@
     <meta name="description" content="Charged with a DUI in Seattle? The Law Hawks bring science, strategy & grit to fight for your license, freedom, and future. Free consultation.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
     <style>
 body {
     font-family: 'Roboto', sans-serif;
@@ -14,44 +16,8 @@ body {
     background: #fff;
     padding-top: 60px;
 }
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background: #1a3c6e;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.08);
-}
-        .container { width: 95%; max-width: 1200px; margin: 0 auto; padding: 0 10px; }
-        .consult-btn.btn {
-    background: #8CBF4B;
-    color: #1a3c6e !important;
-    font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-left: 10px;
-    transition: background 0.3s, color 0.3s;
-    border: none;
-    display: inline-block;
-}
-.consult-btn.btn:hover {
-    background: #1a3c6e;
-    color: #8CBF4B !important;
-}
-nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin-left: 25px;
-    margin-right: 0;
-    display: inline-block;
-}
+
+        .container { width: 85%; max-width: 1200px; margin: 0 auto; padding: 0 10px; }
 /* --- HERO --- */
 .hero { 
     background: linear-gradient(120deg, rgba(26,60,110,0.7) 70%, rgba(0,34,68,0.7) 100%), url('city-seattle-with-text.jpg') no-repeat center center/cover; 
@@ -125,16 +91,7 @@ nav ul li {
 }
 .cta .btn { background: #1a3c6e; color: #8CBF4B; font-weight: bold; }
 .cta .btn:hover { background: #8CBF4B; color: #1a3c6e; }
-/* --- FOOTER --- */
-footer { background: #002244; color: #fff; padding: 60px 0 30px; }
-.footer-content { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
-.footer-column { flex: 1; min-width: 250px; }
-.footer-column h3 { margin-bottom: 20px; color: #8CBF4B; }
-.footer-column ul { list-style: none; }
-.footer-column ul li { margin-bottom: 10px; }
-.footer-column ul li a { color: #8CBF4B; text-decoration: none; transition: color 0.3s; }
-.footer-column ul li a:hover { color: #1a3c6e; }
-.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
 /* --- Fade-in Animation --- */
 .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1); will-change: opacity, transform;}
 .fade-in-section.is-visible { opacity: 1; transform: none;}
@@ -154,49 +111,50 @@ footer { background: #002244; color: #fff; padding: 60px 0 30px; }
 .sticky-cta-bar .btn { margin: 0 auto; max-width: 300px; padding: 10px 20px; font-size: 1.1em; background: #8CBF4B; color: #1a3c6e; font-weight: bold;}
 .sticky-cta-bar .btn:hover { background: #002244; color: #8CBF4B;}
 @media (max-width: 900px) {
-    .coach-cards, .science-grid, .stats-grid { flex-direction: column; display: block; }
-    .footer-content { flex-direction: column; gap: 20px; }
+    .coach-cards, .science-grid, .stats-grid { flex-direction: column; display: block;}
+      .coach-card,
+  .science-card,
+  .stats-card {
+    margin: 15px auto;
+  }
 }
     </style>
 </head>
 <body>
     <!-- Header -->
      <div id="main-content">
-<header class="fade-in-section">
-    <div class="container">
-        <div class="header-top" style="display: flex; align-items: center; justify-content: space-between;">
-            <a href="index.html" class="logo">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px;">
-            </a>
-            <nav style="flex: 1; display: flex; justify-content: center;">
-                <ul>
-                    <li><a href="#" onclick="loadPage('home', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Home</a></li>
-                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">About</a></li>
-                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Contact</a></li>
-                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a></li>
-                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">DUIs 101</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="consult-btn btn" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a>
-        </div>
-    </div>
-</header>
-
+<?php
+    include_once('navbar.html');
+?>
     <!-- Hero Section -->
     <section class="hero fade-in-section">
         <div class="container hero-content">
-            <h1><i class="fas fa-football-ball"></i> Seattle DUI Lawyer: Science, Strategy, and Grit in Every Case.</h1>
-            <p>A DUI charge in Seattle is <strong>Game Time</strong>. Your license, your freedom, and your future are all on the line. The clock is running, and the State is building its case. You don't get a do-over.<br>
-            At Seattle Law Hawks, we bring a complete, championship-level game plan to your defense—from fighting the Department of Licensing hearing to prevent license suspension, to challenging the State's evidence in court, all the way to a jury trial if necessary. Whether you've just been arrested or have already been charged, we're ready to take the field for you.</p>
-            <a href="contact.html" class="btn"><i class="fas fa-calendar-check"></i> Schedule Your Free Consultation</a>
+            <h1><i class="fas fa-football-ball"></i> Bringing Championship Defense to DUI Cases</h1>
+            <p>
+                For more than 20 years, Seattle Law Hawks have run a playbook built on one thing: defense that wins. Like our city’s great sports teams, we know victories come from fundamentals, discipline, and relentless preparation. When the stakes are high, we step up and deliver.
+            </p>
+            <a href="#" class="btn" onclick="loadPage('contact', '#main-content'); return false;">
+                <i class="fas fa-calendar-check"></i> Schedule Your Free Consultation
+            </a>
         </div>
     </section>
 
-    <!-- Scott Lawrence Section -->
+    <!-- Intro Paragraph -->
+    <section class="fade-in-section" style="background:linear-gradient(90deg, #8CBF4B 0%, #fff 100%);padding:40px 0;">
+        <div class="container" style="max-width:800px;">
+            <p style="font-size:1.2em;text-align:center;">
+                From the opening whistle—the moment police make contact—to the final buzzer—the closure of your case—we’re in your corner. Our team covers every phase of the DUI process: DOL hearings, arraignments, negotiations, suppression motions, expert analysis, and jury trials. Every possession matters, and we don’t waste a step.
+            </p>
+            <p style="font-size:1.1em;text-align:center;">
+                Whether you’ve been arrested, charged, or are under investigation, Seattle Law Hawks are ready to protect your rights, fight for your future, and put you back in the driver’s seat.
+            </p>
+        </div>
+    </section>
+
+    <!-- Meet Scott Preview Block -->
     <section class="coach-section fade-in-section">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-user-tie"></i> Meet Your Defensive MVP</h2>
-            <p style="font-size:1.2em;">Scott Lawrence: Seattle's Veteran DUI Defense Lawyer</p>
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> Meet Scott: Seattle’s Defensive MVP</h2>
             <div class="coach-cards">
                 <div class="coach-card">
                     <i class="fas fa-gavel"></i>
@@ -211,39 +169,24 @@ footer { background: #002244; color: #fff; padding: 60px 0 30px; }
                 <div class="coach-card">
                     <i class="fas fa-user-secret"></i>
                     <h3>Investigation</h3>
-                    <p>12 years as a licensed Private Investigator. He knows how to "scout the opponent," uncover hidden evidence, find holes in police procedure, and dismantle the State's case.</p>
+                    <p>12 years as a licensed Private Investigator. He knows how to "scout the opponent," uncover hidden evidence, and dismantle the State's case.</p>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:30px;">When the stakes couldn't be higher, you need a defense built on Law, Science, and Strategy.</p>
+            <div style="text-align:center;margin-top:20px;">
+                <a href="#" class="btn" onclick="loadPage('about', '#main-content'); return false;">
+                    <i class="fas fa-arrow-right"></i> Learn More About Scott
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Science of DUI Defense Section -->
+    <!-- Running the Latest Playbook in DUI Defense -->
     <section class="science-section fade-in-section">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-microscope"></i> The Science of DUI Defense</h2>
-            <p style="font-size:1.1em;text-align:center;">Breath and Blood Under the Microscope</p>
-            <div class="science-grid">
-                <div class="science-card">
-                    <i class="fas fa-wind"></i>
-                    <h3>Breath Tests</h3>
-                    <ul>
-                        <li>Draeger Alcotest machines must be calibrated, maintained, and operated correctly.</li>
-                        <li>Errors, contamination, and medical conditions can throw off results.</li>
-                        <li><strong>Defense Advantage:</strong> Scott exposes when the machines don’t work.</li>
-                    </ul>
-                </div>
-                <div class="science-card">
-                    <i class="fas fa-vial"></i>
-                    <h3>Blood Tests</h3>
-                    <ul>
-                        <li>Vulnerable to mistakes in storage, handling, and lab analysis.</li>
-                        <li>Chain of custody errors, fermentation, or faulty gas chromatography can skew results.</li>
-                        <li><strong>Defense Advantage:</strong> Scott cross-examines lab analysts and digs into raw data.</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="science-conclusion">When the State relies on "science" to convict you, Scott Lawrence brings <strong>better science</strong> to your defense.</p>
+            <h2 class="section-title"><i class="fas fa-microscope"></i> Running the Latest Playbook in DUI Defense</h2>
+            <p style="font-size:1.1em;text-align:center;">
+                Attorney Scott Lawrence brings two decades of experience as a trial attorney fighting DUIs. He’s trained with the same experts who train police officers in DUI detection and field sobriety tests. At Seattle Law Hawks, we bring in top specialists in breath testing, blood science, and DUI evidence—challenging the government’s star witnesses and staying ahead of every new development in DUI law.
+            </p>
         </div>
     </section>
 
@@ -349,47 +292,22 @@ footer { background: #002244; color: #fff; padding: 60px 0 30px; }
     <section class="cta fade-in-section">
         <div class="container">
             <h2><i class="fas fa-stopwatch"></i> Game Time: Schedule Your Free Consultation Today</h2>
-            <p style="font-size:1.2em;">When you're staring down a DUI charge in Seattle, you need a proven competitor in your corner. Don’t wait until the fourth quarter to call a timeout.<br>
-            Put an experienced Seattle DUI attorney on your team today—and let’s start building your defense.</p>
+            <p style="font-size:1.2em;">
+                When you’re staring down a DUI charge in Seattle, you don’t get a do-over. The clock is running, and the State is already building its case. This is when you need a proven player in your corner.<br>
+                At Seattle Law Hawks, we treat every case like it’s the championship game. We scout the opponent, study the evidence, and bring a full playbook of science, strategy, and courtroom skill to the fight.
+            </p>
             <a href="tel:2064531800" class="btn"><i class="fas fa-phone"></i> (206) 453-1800</a>
-            <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> Contact Us Online</a>
+            <a href="#" class="btn" onclick="loadPage('contact', '#main-content'); return false;"><i class="fas fa-envelope"></i> Contact Us Online</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="fade-in-section">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
-                    <h3>Seattle Law Hawks</h3>
-                    <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#" onclick="loadPage('about', '#main-content'); return false;">About Us</a></li>
-                        <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Contact</a></li>
-                        <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;">Blog</a></li>
-                        <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;">DUIs 101</a></li>
-                        <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
-                    <p>Phone: (206) 453-1800</p>
-                    <p>Email: info@seahawklaw.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Seattle Law Hawks. All rights reserved.</p>
-                <p><a href="#" style="color: #FFC72C;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
-            </div>
-        </div>
-    </footer>
+<?php
+    include_once('footer.html');
+?>    
 </div>
     <!-- Sticky CTA Bar Script & Fade-in Script -->
+     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Create sticky CTA bar once
@@ -479,12 +397,18 @@ footer { background: #002244; color: #fff; padding: 60px 0 30px; }
                 faders.forEach(section => {
                     appearOnScroll.observe(section);
                 });
+                            // Re-initialize navbar dropdown JS
+                initNavbarDropdown();
             })
             .catch(err => {
                 document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
             });
     }
-    // Example usage:
+
+    document.addEventListener('DOMContentLoaded', function() {
+    initNavbarDropdown();
+});
     </script>
+
 </body>
 </html>

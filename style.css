@@ -1,0 +1,222 @@
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 100;
+  background: #1a3c6e;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.08);
+}
+.header-top {
+  display: flex; align-items: center; justify-content: space-between;
+}
+nav ul {
+  display: flex; flex-direction: row; list-style: none; margin: 0; padding: 0;
+}
+nav ul li { margin-left: 25px; position: relative; } /* Add position: relative for dropdown positioning */
+nav ul li:first-child { margin-left: 0; }
+nav ul li a {
+  color: #fff; text-decoration: none; font-weight: 700; font-size: 1.08em; padding: 6px 0; transition: color 0.3s;
+  display: block; /* Important for dropdown trigger area */
+}
+nav ul li a:hover { color: #8CBF4B; }
+
+/* --- DROPDOWN STYLES --- */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position below the parent link */
+  left: 0;
+  min-width: 200px;
+  background: #1a3c6e; /* Same as header background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 10px 0;
+  z-index: 999;
+  list-style: none;
+  margin: 0; /* Override nav ul margin */
+}
+
+/* Show dropdown on hover or when a link inside it is focused */
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+
+/* Style for dropdown menu items */
+.dropdown-menu li {
+  margin: 0; /* Remove left margin from main nav li */
+  padding: 0 15px; /* Add padding to the side of the menu item */
+}
+
+.dropdown-menu li a {
+  padding: 8px 0; /* Adjust padding for better look inside dropdown */
+  font-size: 1em; /* Adjust font size */
+  font-weight: 500;
+  white-space: nowrap; /* Prevent items from wrapping */
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  color: #8CBF4B;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background change on hover/focus */
+}
+/* --- END DROPDOWN STYLES --- */
+
+
+/* Existing @media (max-width: 900px) styles for mobile... */
+
+@media (max-width: 900px) {
+  /* ... existing styles ... */
+
+  nav ul li { margin: 18px 0 0 0; text-align: center; }
+
+  /* Mobile: Make dropdown stack vertically */
+  .dropdown-menu {
+    position: static; /* Stack normally in mobile view */
+    box-shadow: none; /* Remove shadow */
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+    background: #163259; /* Slightly darker background for submenu */
+  }
+
+  .dropdown-menu li {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Show the dropdown menu on mobile when the main menu is open */
+  nav ul.open .dropdown-menu {
+    display: block;
+  }
+}
+.consult-btn.btn {
+  background: #8CBF4B; color: #1a3c6e !important; font-weight: bold;
+  padding: 8px 20px; border-radius: 25px; text-decoration: none; margin-left: 10px;
+  transition: background 0.3s, color 0.3s; border: none; display: inline-block;
+}
+.consult-btn.btn:hover { background: #1a3c6e; color: #8CBF4B !important; }
+.nav-toggle {
+  display: none; background: none; border: none; color: #fff; font-size: 2rem; margin-left: 18px; cursor: pointer;
+}
+@media (max-width: 900px) {
+  nav ul {
+    flex-direction: column;
+    background: #1a3c6e;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    display: none;
+    z-index: 9999;
+    width: 100vw;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding-bottom: 20px;
+  }
+  nav ul.open { display: flex; }
+  nav ul li { margin: 18px 0 0 0; text-align: center; }
+  .nav-toggle { display: block; }
+  .consult-btn.btn { margin-left: 0; }
+  .header-top { flex-wrap: wrap; }
+}
+footer {
+  background: #002244; color: #fff; padding: 60px 0 30px;
+}
+.footer-content { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.footer-column { flex: 1; min-width: 250px; }
+.footer-column h2 { margin-bottom: 20px; color: #8CBF4B; }
+.footer-column ul { list-style: none; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 700;
+  /* Ensure color is always applied */
+}
+.footer-column ul li a:visited {
+  color: #fff;
+}
+.footer-column ul li a:hover,
+.footer-column ul li a:focus {
+  color: #1a3c6e;
+  text-decoration: none;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #001a33;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+  color: #fff;
+  font-size: 1em;
+}
+
+.footer-bottom a {
+  color: #FFC72C;
+  text-decoration: underline;
+  font-weight: 700;
+  transition: color 0.3s;
+  word-break: break-word;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .footer-bottom {
+    padding-top: 20px;
+    font-size: 0.98em;
+  }
+}
+
+.quick-links-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quick-links-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-links-list li {
+  margin-bottom: 10px;
+}
+.quick-links-list h2 {
+  margin-left: 10px;
+}
+
+.quick-links-list li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 700;
+}
+
+.quick-links-list li a:hover,
+.quick-links-list li a:focus {
+  color: #1a3c6e;
+  text-decoration: underline;
+}
+
+/* Responsive: center everything on mobile */
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+}

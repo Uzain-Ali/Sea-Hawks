@@ -1,0 +1,26 @@
+<header>
+  <div class="container header-top">
+    <a href="index.php" class="logo">
+      <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px;">
+    </a>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#" onclick="loadPage('home', '#main-content'); return false;">Home</a></li>
+        <li><a href="#" onclick="loadPage('seattle-dui-lawyer', '#main-content'); return false;">DUI Defense</a></li>
+        <li class="dropdown">
+          <a href="#" aria-expanded="false" aria-haspopup="true">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="loadPage('marijuana', '#main-content'); return false;">Marijuana DUIs</a></li>
+          </ul>
+        </li>
+        <li><a href="#" onclick="loadPage('about', '#main-content'); return false;">About</a></li>
+        <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Contact</a></li>
+        <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;">Blog</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="consult-btn btn" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>

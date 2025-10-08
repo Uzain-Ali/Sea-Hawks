@@ -29,6 +29,8 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
     <meta charset="UTF-8">
     <title>Scott's Website - Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+
         <style>
         body {
             color: #333;
@@ -40,63 +42,10 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
 
         }
         .container {
-            width: 100%;
+            width: 85%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-        header {
-            background-color: #1a3c6e;
-            color: white;
-            padding: 15px 0;
-        }
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .logo img {
-            height: 60px;
-            margin-right: 10px;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        nav ul li {
-            margin-left: 25px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #8CBF4B;
-        }
-        .consult-btn {
-            background-color: #8CBF4B;
-            color: white !important;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.3s;
-            border: none;
-            display: inline-block;
-        }
-        .consult-btn:hover {
-            background-color: #8CBF4B;
-            color: #1a3c6e !important;
         }
         .contact-hero {
             background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.8)), url('/city-seattle-with-text.jpg') no-repeat center center/cover;
@@ -265,45 +214,6 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
                 100% { transform: translateX(-770px); }
             }
         }
-        /* Footer styles (reuse from index) */
-        footer {
-            background-color: #0f2447;
-            color: white;
-            padding: 60px 0 30px;
-        }
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        .footer-column h3 {
-            margin-bottom: 20px;
-            color: #8CBF4B;
-        }
-        .footer-column ul {
-            list-style: none;
-        }
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        .footer-column ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-column ul li a:hover {
-            color: #8CBF4B;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
     </style>
     <style>
         /* ...existing styles... */
@@ -387,25 +297,9 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="header-top">
-            <a href="index.html" class="logo">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
-            </a>
-            <nav style="flex: 1; display: flex; justify-content: center;">
-                <ul>
-                    <li><a href="#" onclick="loadPage('home', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Home</a></li>
-                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">About</a></li>
-                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Contact</a></li>
-                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a></li>
-                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;" style="color: #fff; text-decoration: none; font-weight: 700;">DUIs 101</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="consult-btn btn" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a>
-        </div>
-    </div>
-</header>
+<?php
+    include_once('navbar.html');
+?>
      <div id="main-content">
 
     <section class="blog-hero fade-in-section">
@@ -464,37 +358,9 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
 </div>
 
 <!-- Footer (copy from index.html) -->
-<footer class="fade-in-section">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:75px; width: 110px; margin-bottom:15px;">
-                <h3>Seahawk Law</h3>
-                <p>Dedicated DUI defense serving Seattle and surrounding areas. Trusted experience you can rely on.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#" onclick="loadPage('about', '#main-content'); return false;">About Us</a></li>
-                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Contact</a></li>
-                    <li><a href="#" onclick="loadPage('blog', '#main-content'); return false;">Blog</a></li>
-                    <li><a href="#" onclick="loadPage('dui', '#main-content'); return false;">DUIs 101</a></li>
-                    <li><a href="#" onclick="loadPage('contact', '#main-content'); return false;">Free Consultation</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>123 Legal Avenue, Suite 100<br>Seattle, WA 98101</p>
-                <p>Phone: (206) 555-0123</p>
-                <p>Email: info@seahawklaw.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Seahawk Law. All rights reserved.</p>
-            <p><a href="#" style="color: #8CBF4B;">Click Here to See Our Reviews and Ratings on the Definitive Legal Review Site, Avvo</a></p>
-        </div>
-    </div>
-</footer>
+<?php
+    include_once('footer.html');
+?>   
         </div>
 </body>
     <script>
@@ -576,7 +442,54 @@ while ($row = mysqli_fetch_assoc($blogResult)) {
                 document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
             });
     }
-    
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navUl = document.querySelector('nav ul');
+  const dropdowns = document.querySelectorAll('.dropdown > a');
+
+  // Toggle mobile menu
+  navToggle.addEventListener('click', function() {
+    navUl.classList.toggle('open');
+  });
+
+  // Close menu on link click (mobile)
+  // This will now also close the *main* mobile menu when a dropdown item is clicked.
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      // Only close if it's the mobile menu (ul.open class is present)
+      if (navUl.classList.contains('open')) {
+        navUl.classList.remove('open');
+      }
+    });
+  });
+
+  // Optional: ARIA toggle for the desktop dropdown (improves accessibility)
+  dropdowns.forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+        // Prevent default only if the menu is NOT in mobile view (i.e., navUl is NOT open)
+        if (window.innerWidth > 900) {
+            e.preventDefault();
+            const parentLi = this.closest('.dropdown');
+            const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Close all other open dropdowns
+            document.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(otherLink => {
+                if (otherLink !== this) {
+                    otherLink.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current dropdown
+            this.setAttribute('aria-expanded', !isExpanded);
+            // We use CSS for display toggling (via :hover and :focus-within), 
+            // but setting aria-expanded is crucial for screen readers.
+        }
+        // Mobile menu functionality is handled by the mobile media query and the nav-toggle
+    });
+  });
+});
+
     // Example usage:
     // loadPage('blog', '#main-content');
     </script>

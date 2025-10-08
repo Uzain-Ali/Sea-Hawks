@@ -1,8 +1,10 @@
 <?php
 return [
-    'home'      => 'index.html',
-    'about'     => 'about.html',
-    'contact'   => 'contact.html',
+    'home'      => 'index.php',
+    'about'     => 'about.php',
+    'contact'   => 'contact.php',
+    'marijuana' => 'marijuana-dui.php',
+    'seattle-dui-lawyer' => 'seattle-dui-lawyer.php',
     'blog'      => 'blog.php',
     'viewBlog'  => 'view-blog.php',
     'dui'       => 'dui.html',
