@@ -39,18 +39,46 @@ body {
 .btn:hover { background: #1a3c6e; color: #fff; }
 /* --- SCOTT LAWRENCE --- */
 .coach-section { 
-    background: linear-gradient(90deg, #8CBF4B 0%, #fff 100%);
+    background: linear-gradient(90deg, #1a3c6e 0%, #fff 100%);
     padding: 60px 0 40px;
     text-align: center;
 }
 .coach-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
-.coach-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(26,60,110,0.08); padding: 30px 24px; min-width: 260px; max-width: 320px; transition: transform 0.2s; }
-.coach-card:hover { transform: scale(1.05) rotate(-2deg);}
-.coach-card i { font-size: 2.5rem; color: #1a3c6e; margin-bottom: 12px; }
-.coach-card h3 { color: #002244; margin-bottom: 10px; }
+.coach-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(26,60,110,0.08);
+    padding: 30px 24px;
+    min-width: 220px;
+    max-width: 320px;
+    transition: transform 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.coach-card:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.coach-card i {
+    font-size: 2.5rem;
+    color: #1a3c6e;
+    margin-bottom: 12px;
+}
+
+.coach-card h3 {
+    color: #002244;
+    margin-bottom: 10px;
+}
+.center-card {
+    grid-column: 1 / span 2;
+    margin: 0 auto;
+    max-width: 320px;
+}
 /* --- SCIENCE SECTION --- */
 .science-section { 
-    background: linear-gradient(120deg, #fff 60%, #8CBF4B 100%);
+    background: linear-gradient(120deg, #fff 60%, #1a3c6e 100%);
     padding: 60px 0 40px;
 }
 .science-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
@@ -60,7 +88,7 @@ body {
 .science-card h3 { color: #1a3c6e; }
 /* --- GAME STATS --- */
 .stats-section { 
-    background: linear-gradient(90deg, #1a3c6e 70%, #002244 100%);
+    background: linear-gradient(90deg, #1a3c6e 0%, #fff 100%);   
     color: #8CBF4B;
     padding: 70px 0 50px;
     position: relative;
@@ -118,18 +146,107 @@ body {
     margin: 15px auto;
   }
 }
-    </style>
+
+.coach-main-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 18px; /* Reduced from 40px to 18px */
+    letter-spacing: 1px;
+    color: #1a3c6e;
+    position: relative;
+}
+.coach-main-title i {
+    margin-right: 10px;
+    color: #8CBF4B;
+}
+/* Coach Section Flex Layout */
+.coach-flex {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    justify-content: center;
+}
+
+.coach-image {
+    flex: 1.3 1 0;           /* Increase flex grow for image */
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-width: 440px;         /* Increase minimum width */
+    max-width: 500px;         /* Increase maximum width */
+    height: 60%;
+}
+
+.coach-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.coach-content {
+    flex: 1 1 0;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.coach-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: stretch;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .coach-flex {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .coach-image {
+        max-width: 100%;
+        min-width: 220px;
+        height: auto;
+        margin-bottom: 18px;
+    }
+    .coach-image img {
+        height: auto;
+        max-height: 340px;
+        object-fit: contain;
+    }
+    .coach-content {
+        width: 100%;
+    }
+        .coach-cards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .center-card {
+        grid-column: auto;
+        margin: 0;
+        max-width: 320px;
+    }
+}    </style>
 </head>
 <body>
-    <!-- Header -->
-     <div id="main-content">
-<?php
+    <?php
     include_once('navbar.html');
 ?>
+    <!-- Header -->
+     <div id="main-content">
+
     <!-- Hero Section -->
-    <section class="hero fade-in-section">
-        <div class="container hero-content">
-            <h1><i class="fas fa-football-ball"></i> Bringing Championship Defense to DUI Cases</h1>
+<section class="hero fade-in-section">
+  <div class="container hero-content">
+    <h1>Bringing Championship Defense to DUI Cases</h1>
             <p>
                 For more than 20 years, Seattle Law Hawks have run a playbook built on one thing: defense that wins. Like our city’s great sports teams, we know victories come from fundamentals, discipline, and relentless preparation. When the stakes are high, we step up and deliver.
             </p>
@@ -140,7 +257,7 @@ body {
     </section>
 
     <!-- Intro Paragraph -->
-    <section class="fade-in-section" style="background:linear-gradient(90deg, #8CBF4B 0%, #fff 100%);padding:40px 0;">
+    <section class="fade-in-section" style="background:linear-gradient(120deg, #fff 60%, #1a3c6e 100%); padding:40px 0;">
         <div class="container" style="max-width:800px;">
             <p style="font-size:1.2em;text-align:center;">
                 From the opening whistle—the moment police make contact—to the final buzzer—the closure of your case—we’re in your corner. Our team covers every phase of the DUI process: DOL hearings, arraignments, negotiations, suppression motions, expert analysis, and jury trials. Every possession matters, and we don’t waste a step.
@@ -152,33 +269,42 @@ body {
     </section>
 
     <!-- Meet Scott Preview Block -->
-    <section class="coach-section fade-in-section">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-user-tie"></i> Meet Scott: Seattle’s Defensive MVP</h2>
-            <div class="coach-cards">
-                <div class="coach-card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Criminal Law</h3>
-                    <p>20+ years of DUI trial defense. Scott knows the courtroom, the judges, and the most effective legal arguments to challenge the State.</p>
-                </div>
-                <div class="coach-card">
-                    <i class="fas fa-flask"></i>
-                    <h3>Chemistry</h3>
-                    <p>B.S. in Chemistry (UW), Certified Chemist (ACS). He can dissect and challenge the "science" behind your breath and blood tests, exposing errors other lawyers miss.</p>
-                </div>
-                <div class="coach-card">
-                    <i class="fas fa-user-secret"></i>
-                    <h3>Investigation</h3>
-                    <p>12 years as a licensed Private Investigator. He knows how to "scout the opponent," uncover hidden evidence, and dismantle the State's case.</p>
-                </div>
+<section class="coach-section fade-in-section">
+    <div class="container">
+        <h2 class="section-title coach-main-title">
+            <i class="fas fa-user-tie"></i> Meet Scott: Seattle’s Defensive MVP
+        </h2>
+        <div class="coach-flex">
+            <div class="coach-image">
+                <img src="image/Scott-10-removebg-preview.png" alt="Scott Lawrence" />
             </div>
-            <div style="text-align:center;margin-top:20px;">
-                <a href="#" class="btn" onclick="loadPage('about', '#main-content'); return false;">
-                    <i class="fas fa-arrow-right"></i> Learn More About Scott
-                </a>
+            <div class="coach-content">
+                <div class="coach-cards-grid">
+                    <div class="coach-card">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Criminal Law</h3>
+                        <p>20+ years of DUI trial defense. Scott knows the courtroom, the judges, and the most effective legal arguments to challenge the State.</p>
+                    </div>
+                    <div class="coach-card">
+                        <i class="fas fa-flask"></i>
+                        <h3>Chemistry</h3>
+                        <p>B.S. in Chemistry (UW), Certified Chemist (ACS). He can dissect and challenge the "science" behind your breath and blood tests, exposing errors other lawyers miss.</p>
+                    </div>
+                    <div class="coach-card center-card">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Investigation</h3>
+                        <p>12 years as a licensed Private Investigator. He knows how to "scout the opponent," uncover hidden evidence, and dismantle the State's case.</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:20px;">
+                    <a href="#" class="btn" onclick="loadPage('about', '#main-content'); return false;">
+                        <i class="fas fa-arrow-right"></i> Learn More About Scott
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Running the Latest Playbook in DUI Defense -->
     <section class="science-section fade-in-section">
@@ -301,13 +427,13 @@ body {
         </div>
     </section>
 
+
+</div>
     <!-- Footer -->
 <?php
     include_once('footer.html');
 ?>    
-</div>
     <!-- Sticky CTA Bar Script & Fade-in Script -->
-     <script src="script.js"></script>
     <script>
         function initStickyCtaBar() {
             createStickyCtaBar();
@@ -368,48 +494,10 @@ body {
         });
     </script>
                 <script>
-    function loadPage(page, targetSelector) {
-        fetch('route.php?page=' + encodeURIComponent(page))
-            .then(response => {
-                if (!response.ok) throw new Error('Page not found');
-                return response.text();
-            })
-            .then(html => {
-                const target = document.querySelector(targetSelector);
-                target.innerHTML = html;
-    
-                // Re-run fade-in animation for new content
-                const faders = target.querySelectorAll('.fade-in-section');
-                const appearOptions = {
-                    threshold: 0.15,
-                    rootMargin: "0px 0px -20px 0px"
-                };
-                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, appearOptions);
-    
-                faders.forEach(section => {
-                    appearOnScroll.observe(section);
-                });
-                            // Re-initialize navbar dropdown JS
-                initNavbarDropdown();
-                initStickyCtaBar();
-            })
-            .catch(err => {
-                document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
-            });
-    }
 
-document.addEventListener('DOMContentLoaded', function() {
-    initNavbarDropdown();
-    initStickyCtaBar();
-});
+
     </script>
+     <script src="script.js"></script>
 
 </body>
 </html>

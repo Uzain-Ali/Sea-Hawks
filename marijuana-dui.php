@@ -20,7 +20,7 @@
         .btn { background: #8CBF4B; color: #1a3c6e; font-weight: bold; border-radius: 25px; padding: 12px 32px; font-size: 1.2rem; text-decoration: none; transition: background 0.3s; display: inline-block; margin: 10px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);}
         .btn:hover { background: #1a3c6e; color: #fff; }
         /* --- MAIN --- */
-        .marijuana-main { background: linear-gradient(90deg, #8CBF4B 0%, #fff 100%); padding: 60px 0;}
+        .marijuana-main { background: linear-gradient(90deg, #1a3c6e 0%, #fff 100%); padding: 60px 0;}
         .marijuana-section { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 40px 30px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;}
         .marijuana-section h2 { color: #1a3c6e; margin-bottom: 18px; }
         .marijuana-section ul { margin-left: 24px; }
@@ -180,13 +180,11 @@
                 <a href="#" class="btn" onclick="loadPage('contact', '#main-content'); return false;"><i class="fas fa-envelope"></i> Contact Us Online</a>
             </div>
         </section>
-
-        <!-- Footer -->
-<?php
-    include_once('footer.html');
-?>   
     </div>
+            <!-- Footer -->
+  
     <!-- Fade-in Animation for Sections -->
+     <script src="script.js"></script>
     <script>
                 document.addEventListener('DOMContentLoaded', function() {
             // Create sticky CTA bar once
@@ -245,88 +243,6 @@
             });
         });
     </script>
-    <script>
-    function loadPage(page, targetSelector) {
-        fetch('route.php?page=' + encodeURIComponent(page))
-            .then(response => {
-                if (!response.ok) throw new Error('Page not found');
-                return response.text();
-            })
-            .then(html => {
-                const target = document.querySelector(targetSelector);
-                target.innerHTML = html;
 
-                // Re-run fade-in animation for new content
-                const faders = target.querySelectorAll('.fade-in-section');
-                const appearOptions = {
-                    threshold: 0.15,
-                    rootMargin: "0px 0px -20px 0px"
-                };
-                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, appearOptions);
-
-                faders.forEach(section => {
-                    appearOnScroll.observe(section);
-                });
-            })
-            .catch(err => {
-                document.querySelector(targetSelector).innerHTML = '<div style="color:red;">Error loading page.</div>';
-            });
-    }
-document.addEventListener('DOMContentLoaded', function() {
-  const navToggle = document.getElementById('nav-toggle');
-  const navUl = document.querySelector('nav ul');
-  const dropdowns = document.querySelectorAll('.dropdown > a');
-
-  // Toggle mobile menu
-  navToggle.addEventListener('click', function() {
-    navUl.classList.toggle('open');
-  });
-
-  // Close menu on link click (mobile)
-  // This will now also close the *main* mobile menu when a dropdown item is clicked.
-  navUl.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      // Only close if it's the mobile menu (ul.open class is present)
-      if (navUl.classList.contains('open')) {
-        navUl.classList.remove('open');
-      }
-    });
-  });
-
-  // Optional: ARIA toggle for the desktop dropdown (improves accessibility)
-  dropdowns.forEach(dropdownLink => {
-    dropdownLink.addEventListener('click', function(e) {
-        // Prevent default only if the menu is NOT in mobile view (i.e., navUl is NOT open)
-        if (window.innerWidth > 900) {
-            e.preventDefault();
-            const parentLi = this.closest('.dropdown');
-            const dropdownMenu = parentLi.querySelector('.dropdown-menu');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-            // Close all other open dropdowns
-            document.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(otherLink => {
-                if (otherLink !== this) {
-                    otherLink.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Toggle current dropdown
-            this.setAttribute('aria-expanded', !isExpanded);
-            // We use CSS for display toggling (via :hover and :focus-within), 
-            // but setting aria-expanded is crucial for screen readers.
-        }
-        // Mobile menu functionality is handled by the mobile media query and the nav-toggle
-    });
-  });
-});
-
-    </script>
 </body>
 </html>

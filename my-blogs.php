@@ -75,7 +75,7 @@ $blogs = $stmt->get_result();
     <div class="container" style="background:none; box-shadow:none; padding:0;">
         <div class="header-top">
             <a href="index.html" class="logo">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo">
+                <img src="image/logo.png" alt="Seattle Law Hawks Logo">
             </a>
             <nav>
                 <ul style="display:flex;list-style:none;margin:0;padding:0;gap:18px;">

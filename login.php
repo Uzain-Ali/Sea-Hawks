@@ -319,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="header-top">
             <a href="index.html" class="logo">
-                <img src="image/logoSM.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
+                <img src="image/logo.png" alt="Seattle Law Hawks Logo" style="height:60px; margin-right:10px;">
             </a>
         </div>
     </div>
