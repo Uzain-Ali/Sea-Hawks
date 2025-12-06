@@ -4,21 +4,30 @@ require_once 'auth.php';
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
-    $password = $_POST['password'];
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' LIMIT 1");
-    if ($result && mysqli_num_rows($result) === 1) {
-        $user = mysqli_fetch_assoc($result);
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['name'];
-            header('Location: my-blogs.php'); // Redirect to create-blog page
-            exit;
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    if ($email === '' || $password === '') {
+        $error = 'Please enter email and password.';
+    } else {
+        // Use prepared statement and verify against password_hash
+        $stmt = mysqli_prepare($conn, "SELECT id, name, password_hash FROM users WHERE email = ? LIMIT 1");
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if ($result && mysqli_num_rows($result) === 1) {
+            $user = mysqli_fetch_assoc($result);
+            if (password_verify($password, $user['password_hash'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                header('Location: my-blogs.php');
+                exit;
+            } else {
+                $error = 'Invalid email or password.';
+            }
         } else {
             $error = 'Invalid email or password.';
         }
-    } else {
-        $error = 'Invalid email or password.';
+        mysqli_stmt_close($stmt);
     }
 }
 ?>

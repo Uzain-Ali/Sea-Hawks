@@ -17,13 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = 'Email already registered.';
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hash')";
-            if (mysqli_query($conn, $sql)) {
+            // Use correct column name and prepared statement to avoid SQL injection
+            $stmt = mysqli_prepare($conn, "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)");
+            mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $hash);
+            if (mysqli_stmt_execute($stmt)) {
                 header('Location: login.php');
                 exit;
             } else {
                 $error = 'Registration failed. Please try again.';
             }
+            mysqli_stmt_close($stmt);
         }
     }
 }

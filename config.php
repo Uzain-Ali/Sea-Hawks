@@ -5,6 +5,7 @@ return [
     'contact'   => 'contact.php',
     'marijuana' => 'marijuana-dui.php',
     'seattle-dui-lawyer' => 'seattle-dui-lawyer.php',
+    'dui-101'  => 'dui-101.php',
     'blog'      => 'blog.php',
     'viewBlog'  => 'view-blog.php',
     'dui'       => 'dui.html',
